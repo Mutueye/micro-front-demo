@@ -10,5 +10,5 @@
 </template>
 
 <script lang="ts" setup>
-  import ThemeToggler from './ThemeToggler.vue';
+  import ThemeToggler from '@/components/ThemeToggler.vue';
 </script>

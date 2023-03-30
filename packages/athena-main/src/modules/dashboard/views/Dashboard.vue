@@ -1,5 +1,5 @@
 <template>
-  <ScrollableContentPage>
+  <AdminScrollableContent>
     <div class="w-full flex flex-col items-center">
       <div class="w-full py-space-xxxl text-center font-bold">HOME</div>
       <HelloWorld msg="Hellow World" />
@@ -17,14 +17,14 @@
         </el-table>
       </div>
     </div>
-  </ScrollableContentPage>
+  </AdminScrollableContent>
 </template>
 
 <script lang="ts" setup>
   import { onMounted, ref } from 'vue';
   import { get } from 'lodash-es';
   import HelloWorld from '@/components/HelloWorld.vue';
-  import ScrollableContentPage from '@/modules/layout/views/components/ScrollableContentPage.vue';
+  import AdminScrollableContent from '@/layout/admin/components/AdminScrollableContent.vue';
   import { ConfigModel, getSchoolList, SchoolModel, getConfigList } from '@/api/dicts';
 
   const selectedSchool = ref<SchoolModel>();

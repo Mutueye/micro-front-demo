@@ -1,5 +1,5 @@
 <template>
-  <ScrollableContentPage>
+  <AdminScrollableContent>
     <div class="flex flex-col w-560px mx-auto">
       <div class="border border-border p-space mb-space-xl rounded-base">
         <div class="text-size-base color-text-regular mb-space">
@@ -111,13 +111,13 @@
         </el-form-item>
       </el-form>
     </div>
-  </ScrollableContentPage>
+  </AdminScrollableContent>
 </template>
 
 <script lang="ts" setup>
   import { ref, reactive } from 'vue';
   import { ElForm, ElMessage, FormInstance, FormRules } from 'element-plus';
-  import ScrollableContentPage from '@/modules/layout/views/components/ScrollableContentPage.vue';
+  import AdminScrollableContent from '@/layout/admin/components/AdminScrollableContent.vue';
   import RuleInfoBox from './components/RuleInfoBox.vue';
   import { globalFormRules } from '@/utils/formRules';
   import { ruleInfoList } from '../utils/ruleInfo';

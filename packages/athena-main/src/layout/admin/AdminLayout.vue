@@ -23,7 +23,7 @@
   import { useRoute } from 'vue-router';
   import { LayoutEnum } from '@/router/layoutRouteConfig';
   import Menu from './components/Menu.vue';
-  import ThemeToggler from './components/ThemeToggler.vue';
+  import ThemeToggler from '../../components/ThemeToggler.vue';
 
   const route = useRoute();
 

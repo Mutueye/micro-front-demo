@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface Result<T = any> {
+export interface Result<T> {
   code: number;
   status: number;
   success: boolean;
