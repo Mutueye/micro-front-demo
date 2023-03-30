@@ -5,7 +5,7 @@ site
 lib
 esm
 .DS_Store
-.vscode
+# .vscode
 yarn.lock
 package-lock.json
 coverage

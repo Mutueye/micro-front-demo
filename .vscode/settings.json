@@ -1,0 +1,42 @@
+{
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "stylelint.snippet": ["css", "less", "postcss", "scss", "vue"],
+  "stylelint.validate": ["css", "less", "postcss", "scss", "vue"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false,
+    "source.fixAll.stylelint": false
+  },
+  "diffEditor.wordWrap": "off",
+  "colorize.languages": [
+    "json",
+    "jsonc",
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "postcss",
+    "sss",
+    "stylus",
+    "xml",
+    "svg",
+    "javascript",
+    "typescript",
+    "vue"
+  ],
+  "colorize.include": [
+    "**/*.json",
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "**/*.styl",
+    "**/*.js",
+    "**/*.ts",
+    "**/*.vue"
+  ],
+  "volar.inlayHints.eventArgumentInInlineHandlers": false
+}
