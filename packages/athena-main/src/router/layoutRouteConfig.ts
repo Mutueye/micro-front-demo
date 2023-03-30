@@ -9,6 +9,7 @@ import type { Component } from 'vue';
 export enum LayoutEnum {
   base = 'base',
   admin = 'admin',
+  // Add more layouts here
 }
 
 const generateLayoutRoute = (config: {
@@ -25,12 +26,6 @@ const generateLayoutRoute = (config: {
 };
 
 export const layoutRoutes: Record<LayoutEnum, RouteRecordRaw> = {
-  base: generateLayoutRoute({
-    name: LayoutEnum.base,
-    component: BaseLayout,
-  }),
-  admin: generateLayoutRoute({
-    name: LayoutEnum.admin,
-    component: AdminLayout,
-  }),
+  base: generateLayoutRoute({ name: LayoutEnum.base, component: BaseLayout }),
+  admin: generateLayoutRoute({ name: LayoutEnum.admin, component: AdminLayout }),
 };
