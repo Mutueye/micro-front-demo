@@ -6,12 +6,10 @@ importers:
     specifiers:
       '@lerna-lite/cli': ^1.17.0
       '@lerna-lite/run': ^1.17.0
-      lint-staged: ^13.2.0
       simple-git-hooks: ^2.8.1
     devDependencies:
       '@lerna-lite/cli': registry.npmmirror.com/@lerna-lite/cli/1.17.0
       '@lerna-lite/run': registry.npmmirror.com/@lerna-lite/run/1.17.0
-      lint-staged: registry.npmmirror.com/lint-staged/13.2.0
       simple-git-hooks: registry.npmmirror.com/simple-git-hooks/2.8.1
 
   packages/athena-main:
