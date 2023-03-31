@@ -14,6 +14,7 @@
   import MenuItem from './MenuItem.vue';
 
   const props = defineProps<{ layout: LayoutEnum }>();
+  // 根据传入的layout过滤路由，生成菜单
   const { layout } = toRefs(props);
 
   const { allRoutes, route } = useRouteInfo();

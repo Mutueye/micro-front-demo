@@ -1,6 +1,5 @@
 import { mix, toHex } from 'color2k';
 import { useThemeStore } from '@/store/theme';
-import { GlobalEventBus } from '@/EventBus';
 
 export const cssVarPrepend = '--el';
 
@@ -160,7 +159,7 @@ export const setThemeVariables = () => {
     });
   });
   styleEl.innerText = styleStr;
-  GlobalEventBus.emit('onSetThemeVariables');
+  // GlobalEventBus.emit('onSetThemeVariables');
 };
 
 const generateThemeStyle = ({
