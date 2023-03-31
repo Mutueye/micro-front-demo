@@ -7,7 +7,7 @@
     "prepare": "simple-git-hooks",
     "dev": "lerna run dev --parallel",
     "build": "lerna run build --parallel",
-    "lint": "lerna run lint --parallel",
+    "lint": "pnpm -r --workspace-concurrency=1 lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -20,6 +20,6 @@
     "simple-git-hooks": "^2.8.1"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm run lint"
+    "pre-commit": "pnpm -r --workspace-concurrency=1 lint"
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-300px bg-bg-secondary" />
+  <div class="w-full h-300px bg-bg-secondary flex flex-row items-center justify-center">banner</div>
 </template>
 
 <script setup lang="ts">
