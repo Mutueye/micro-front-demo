@@ -37,7 +37,7 @@ const baseConfig = defineConfig({
       ],
       // unocss can't render icon class dynamically, when adding menu icon class
       // in route.meta.menuConfig, you must also add the icon class in safelist.
-      // TODO get icon name list from all route's meta.iconName
+      // TODO get icon name list from all route's meta.iconName automatically
       safelist: ['i-mdi-collage', 'i-mdi-form-textbox-password', 'i-mdi-clover'],
       transformers: [transformerDirectives(), transformerVariantGroup()],
       theme,
@@ -52,22 +52,22 @@ const baseConfig = defineConfig({
 
 /**
  * 通过不同模式的dev命令来启动不同的开发环境：
- * npm run dev - 默认dev环境 uea.qstcloud.net
- * npm run dev:tev - tev环境 tev.qstcloud.net
- * npm run dev:prod- 生产环境 www.eec-cn.com
- * npm run dev:locally - 启动本地服务调试，需要根据你的本地服务地址，在/env/.env.local里配置VITE_API_BASEPATH和ITE_API_GATEWAY变量
+ * npm run dev - .env.dev环境
+ * npm run dev:prod- .env.prod环境
+ * npm run dev:local - 启动本地服务调试，需要根据你的本地服务地址，在/env/.env.local里配置VITE_API_BASEPATH和ITE_API_GATEWAY变量
  */
 export default defineConfig(({ mode }) => {
   // 取env环境变量配置，没取到则默认开发环境
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd() + '/env') };
-  // link issue https://github.com/sindresorhus/open/issues/205
-  process.env.SYSTEMROOT = process.env.SystemRoot;
+  const viteEnvs = loadEnv(mode, process.cwd() + '/env');
+  for (const k in viteEnvs) {
+    process.env[k] = viteEnvs[k];
+  }
   // api前缀
   const proxyApiPrepend = process.env.VITE_API_BASE_PATH ? process.env.VITE_API_BASE_PATH : '/api';
   // 要代理的地址
   const gateway = process.env.VITE_API_GATEWAY
     ? process.env.VITE_API_GATEWAY
-    : 'https://uea.qstcloud.net';
+    : 'https://qstcloud.com';
 
   return {
     ...baseConfig,

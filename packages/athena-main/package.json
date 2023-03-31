@@ -29,6 +29,7 @@
     "mitt": "^3.0.0",
     "pinia": "^2.0.28",
     "pinia-plugin-persist": "^1.0.0",
+    "qst-ui-system": "workspace:^",
     "vanilla-colorful": "^0.7.2",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",

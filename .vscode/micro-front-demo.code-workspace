@@ -12,11 +12,12 @@
       "name": "packages/athena-home-banner",
       "path": "../packages/athena-home-banner"
     },
+    {
+      "name": "packages/qst-ui-system",
+      "path": "../packages/qst-ui-system"
+    }
   ],
   "settings": {
-    "files.exclude": {
-      "packages/": true
-    },
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "css.validate": false,
