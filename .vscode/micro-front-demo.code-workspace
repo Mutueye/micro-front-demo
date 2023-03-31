@@ -11,12 +11,24 @@
     {
       "name": "packages/athena-home-banner",
       "path": "../packages/athena-home-banner"
-    }
+    },
   ],
   "settings": {
     "files.exclude": {
       "packages/": true
     },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "css.validate": false,
+    "scss.validate": false,
+    "less.validate": false,
+    "stylelint.snippet": ["css", "less", "postcss", "scss", "vue"],
+    "stylelint.validate": ["css", "less", "postcss", "scss", "vue"],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    },
+    "diffEditor.wordWrap": "off",
     "unocss.root": ["packages/athena-main", "packages/athena-home-banner"],
     "colorize.languages": [
       "json",

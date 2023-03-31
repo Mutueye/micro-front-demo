@@ -1,5 +1,3 @@
-/// <reference types="vitest" />
-
 import { defineConfig, loadEnv } from 'vite';
 import * as path from 'path';
 import vue from '@vitejs/plugin-vue';
@@ -49,11 +47,6 @@ const baseConfig = defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-  },
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    setupFiles: [path.resolve(__dirname, 'test/setup.ts')],
   },
 });
 

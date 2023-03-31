@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-300px bg-theme color-white flex flex-row items-center justify-center">
-    banner
+    子应用：athena-home-banner
   </div>
 </template>
 
@@ -13,7 +13,7 @@
   const { currentThemeIndex } = storeToRefs(themeStore);
 
   onMounted(() => {
-    console.log('__POWERED_BY_WUJIE_', window.$wujie.props);
+    console.log('__POWERED_BY_WUJIE_', window.__POWERED_BY_WUJIE__);
     themeStore.setCurrentThemeIndex(currentThemeIndex.value);
   });
 </script>
