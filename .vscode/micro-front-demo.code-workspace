@@ -1,0 +1,47 @@
+{
+  "folders": [
+    {
+      "name": "ROOT",
+      "path": "../"
+    },
+    {
+      "name": "packages/athena-main",
+      "path": "../packages/athena-main"
+    },
+    {
+      "name": "packages/athena-home-banner",
+      "path": "../packages/athena-home-banner"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "packages/": true
+    },
+    "unocss.root": ["packages/athena-main", "packages/athena-home-banner"],
+    "colorize.languages": [
+      "json",
+      "css",
+      "sass",
+      "scss",
+      "less",
+      "stylus",
+      "xml",
+      "svg",
+      "javascript",
+      "typescript",
+      "vue"
+    ],
+    "colorize.include": [
+      "**/*.json",
+      "**/*.css",
+      "**/*.scss",
+      "**/*.sass",
+      "**/*.less",
+      "**/*.styl",
+      "**/*.js",
+      "**/*.ts",
+      "**/*.vue"
+    ],
+    "volar.inlayHints.eventArgumentInInlineHandlers": false
+  }
+}
