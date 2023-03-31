@@ -6,10 +6,12 @@ importers:
     specifiers:
       '@lerna-lite/cli': ^1.17.0
       '@lerna-lite/run': ^1.17.0
+      lint-staged: ^13.2.0
       simple-git-hooks: ^2.8.1
     devDependencies:
       '@lerna-lite/cli': registry.npmmirror.com/@lerna-lite/cli/1.17.0
       '@lerna-lite/run': registry.npmmirror.com/@lerna-lite/run/1.17.0
+      lint-staged: registry.npmmirror.com/lint-staged/13.2.0
       simple-git-hooks: registry.npmmirror.com/simple-git-hooks/2.8.1
 
   packages/athena-home-banner:
@@ -29,7 +31,6 @@ importers:
       eslint-config-prettier: ^8.6.0
       eslint-plugin-vue: ^9.8.0
       jsdom: ^20.0.3
-      lint-staged: ^13.2.0
       lodash-es: ^4.17.21
       pinia: ^2.0.28
       pinia-plugin-persist: ^1.0.0
@@ -71,7 +72,6 @@ importers:
       eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier/8.8.0_eslint@8.37.0
       eslint-plugin-vue: registry.npmmirror.com/eslint-plugin-vue/9.10.0_eslint@8.37.0
       jsdom: registry.npmmirror.com/jsdom/20.0.3
-      lint-staged: registry.npmmirror.com/lint-staged/13.2.0
       postcss: registry.npmmirror.com/postcss/8.4.21
       postcss-html: registry.npmmirror.com/postcss-html/1.5.0
       postcss-scss: registry.npmmirror.com/postcss-scss/4.0.6_postcss@8.4.21
@@ -108,7 +108,6 @@ importers:
       eslint-config-prettier: ^8.6.0
       eslint-plugin-vue: ^9.8.0
       jsdom: ^20.0.3
-      lint-staged: ^13.2.0
       lodash-es: ^4.17.21
       mitt: ^3.0.0
       pinia: ^2.0.28
@@ -159,7 +158,6 @@ importers:
       eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier/8.8.0_eslint@8.37.0
       eslint-plugin-vue: registry.npmmirror.com/eslint-plugin-vue/9.10.0_eslint@8.37.0
       jsdom: registry.npmmirror.com/jsdom/20.0.3
-      lint-staged: registry.npmmirror.com/lint-staged/13.2.0
       postcss: registry.npmmirror.com/postcss/8.4.21
       postcss-html: registry.npmmirror.com/postcss-html/1.5.0
       postcss-scss: registry.npmmirror.com/postcss-scss/4.0.6_postcss@8.4.21
