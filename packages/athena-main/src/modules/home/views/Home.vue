@@ -1,14 +1,11 @@
 <template>
   <div class="w-full flex flex-col items-center">
-    <WuJieVue
-      width="100%"
-      height="auto"
-      name="athena-home-banner"
-      url="//localhost:5210/"
-      :sync="false" />
+    <Banner />
+    <Example />
   </div>
 </template>
 
 <script lang="ts" setup>
-  import WuJieVue from 'wujie-vue3';
+  import Banner from './components/Banner.vue';
+  import Example from './components/Example.vue';
 </script>
