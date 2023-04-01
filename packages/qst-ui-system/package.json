@@ -17,9 +17,8 @@
     "ui-system"
   ],
   "scripts": {
-    "predev": "rimraf dist && rollup -c",
+    "build:lib": "rimraf dist && rollup -c",
     "watch": "imraf dist && rollup -cw",
-    "build": "rimraf dist && rollup -c",
     "lint": "npx lint-staged",
     "format": "prettier . --write",
     "format:check": "prettier . --check",

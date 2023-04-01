@@ -70,6 +70,9 @@ export default defineConfig(({ mode }) => {
     : 'https://qstcloud.com';
 
   return {
+    build: {
+      outDir: `../../dist/${process.env.npm_package_name}`,
+    },
     ...baseConfig,
     base: `${process.env.VITE_APP_BASE_PATH}`,
     server: {

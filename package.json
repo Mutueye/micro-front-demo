@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "prepare": "simple-git-hooks",
-    "predev": "lerna run predev --parallel",
-    "dev": "pnpm predev && lerna run dev --parallel",
-    "build": "lerna run build --parallel",
+    "build:lib": "lerna run build:lib --parallel",
+    "dev": "pnpm build:lib && lerna run dev --parallel",
+    "build": "pnpm build:lib && lerna run build --parallel",
     "lint": "pnpm -r --workspace-concurrency=1 lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
