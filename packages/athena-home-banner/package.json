@@ -30,6 +30,7 @@
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.28",
     "pinia-plugin-persist": "^1.0.0",
+    "qst-ui-system": "workspace:^",
     "vue": "^3.2.45"
   },
   "devDependencies": {

@@ -48,5 +48,8 @@
   "lint-staged": {
     "./**/*.{vue,js,ts,jsx,tsx,json}": "eslint --ignore-path .eslintignore --fix",
     "./**/*.{vue,js,ts,jsx,tsx,md,json,scss,css,html}": "prettier . --write"
+  },
+  "dependencies": {
+    "color2k": "^2.0.1"
   }
 }

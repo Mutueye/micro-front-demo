@@ -3,7 +3,7 @@ import ElementPlus from 'element-plus';
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import App from '@/App.vue';
 import pinia from './store';
-import { initThemeStyle } from './utils/theme/themeManager';
+import { initQstThemeStyles } from 'qst-ui-system';
 
 // css reset
 import '@/styles/reset.scss';
@@ -19,4 +19,4 @@ import '@/styles/index.scss';
 const app = createApp(App);
 app.use(ElementPlus, { locale: zhCn }).use(pinia).mount('#app');
 
-initThemeStyle();
+initQstThemeStyles();

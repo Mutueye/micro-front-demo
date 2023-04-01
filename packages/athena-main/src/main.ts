@@ -6,7 +6,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import App from '@/App.vue';
 import { router } from '@/router/index';
 import pinia from './store';
-import { initThemeStyle } from './utils/theme/themeManager';
+import { initQstThemeStyles } from 'qst-ui-system';
 // import lifecycles from './lifecycle';
 
 // const { setupApp } = WujieVue;
@@ -25,7 +25,7 @@ import '@/styles/index.scss';
 const app = createApp(App);
 app.use(ElementPlus, { locale: zhCn }).use(pinia).use(router).mount('#app');
 
-initThemeStyle();
+initQstThemeStyles();
 
 // const degrade =
 //   window.localStorage.getItem('degrade') === 'true' ||

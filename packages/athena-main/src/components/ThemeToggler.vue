@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row items-center">
     <button
-      v-for="(theme, index) in themeList"
+      v-for="(theme, index) in currentThemeList"
       :key="'primary' + theme.name"
       class="theme-btn mr-space color-white"
       :style="{ backgroundColor: theme.config[dayNightMode].color.primary }"
@@ -28,9 +28,10 @@
   import { storeToRefs } from 'pinia';
   import { useToggleDayNight } from '@/componsables/useToggleDayNight';
   import { useThemeStore } from '@/store/theme';
+  import { currentThemeList } from 'qst-ui-system';
 
   const themeStore = useThemeStore();
-  const { themeList, currentThemeIndex } = storeToRefs(themeStore);
+  const { currentThemeIndex } = storeToRefs(themeStore);
   const { toggleDayNight, dayNightMode } = useToggleDayNight();
 </script>
 

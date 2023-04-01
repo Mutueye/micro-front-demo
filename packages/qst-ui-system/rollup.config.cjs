@@ -49,11 +49,15 @@ module.exports = outputList.map((outputData) => {
     file: outputData.file,
     format: outputData.format,
     banner: outputData.banner,
+    globals: {
+      color2k: 'color2k',
+    },
     sourcemap: outputData.sourcemap,
   };
   if (outputData.name) output.name = outputData.name;
 
   return {
+    external: ['color2k'],
     input: resolve('src/index.ts'),
     output,
     plugins: [
