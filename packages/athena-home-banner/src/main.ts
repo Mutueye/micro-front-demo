@@ -3,7 +3,7 @@ import ElementPlus from 'element-plus';
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import App from '@/App.vue';
 import pinia from './store';
-import { initQstThemeStyles, setThemeClassByIndex } from 'qst-ui-system';
+import { initQstThemeStyles } from 'qst-ui-system';
 
 // css reset
 import '@/styles/reset.scss';
@@ -21,9 +21,3 @@ app.use(ElementPlus, { locale: zhCn }).use(pinia).mount('#app');
 
 // 初始化主题样式
 initQstThemeStyles();
-// 跟随基座项目改变主题
-if (window.__POWERED_BY_WUJIE__) {
-  window.$wujie?.bus.$on('theme-change', (themIndex: number) => {
-    setThemeClassByIndex(themIndex);
-  });
-}
