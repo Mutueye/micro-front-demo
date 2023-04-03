@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-300px bg-theme color-white flex flex-row items-center justify-center">
+  <div class="w-full h-300px bg-theme color-text-primary flex flex-row items-center justify-center">
     子应用：athena-home-banner
   </div>
 </template>

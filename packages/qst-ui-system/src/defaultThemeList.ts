@@ -1,4 +1,4 @@
-import type { UITheme } from './index';
+import type { UITheme } from './qstThemeStyles';
 
 export const defaultThemeList: UITheme[] = [
   {
