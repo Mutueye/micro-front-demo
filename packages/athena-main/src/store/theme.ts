@@ -6,7 +6,7 @@ interface ThemeState {
   currentThemeIndex: number;
 }
 
-export const useThemeStore = defineStore('persist', {
+export const useThemeStore = defineStore('theme', {
   state: (): ThemeState => ({
     currentThemeIndex: 0,
   }),
@@ -24,6 +24,7 @@ export const useThemeStore = defineStore('persist', {
       // set theme class name on "html" tag
       setThemeClassByIndex(themeIndex);
       this.currentThemeIndex = themeIndex;
+      // emit wujie theme-change event
       const { bus } = WujieVue;
       bus.$emit('theme-change', themeIndex);
     },

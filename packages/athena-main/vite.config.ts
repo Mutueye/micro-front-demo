@@ -80,9 +80,13 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
       port: 5100,
       proxy: {
+        '/get_appconfig': {
+          target: gateway,
+          changeOrigin: true,
+          secure: false,
+        },
         [proxyApiPrepend]: {
           target: `${gateway}/api`,
-          ws: true,
           changeOrigin: true,
           rewrite: (path) => path.replace(proxyApiPrepend, ''),
         },

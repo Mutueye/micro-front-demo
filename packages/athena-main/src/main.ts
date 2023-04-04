@@ -1,12 +1,13 @@
 import { createApp } from 'vue';
 import ElementPlus from 'element-plus';
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
+import { initQstThemeStyles } from 'qst-ui-system';
 // import WujieVue from 'wujie-vue3';
 
 import App from '@/App.vue';
 import { router } from '@/router/index';
-import pinia from './store';
-import { initQstThemeStyles } from 'qst-ui-system';
+import pinia from '@/store';
+import { useAppConfigStore } from '@/store/appConfig';
 // import lifecycles from './lifecycle';
 
 // const { setupApp } = WujieVue;
@@ -23,9 +24,17 @@ import 'uno.css';
 import '@/styles/index.scss';
 
 const app = createApp(App);
-app.use(ElementPlus, { locale: zhCn }).use(pinia).use(router).mount('#app');
+app.use(pinia);
+app.use(router);
+app.use(ElementPlus, { locale: zhCn });
 
 initQstThemeStyles();
+
+useAppConfigStore()
+  .getAppConfig()
+  .then(() => {
+    app.mount('#app');
+  });
 
 // const degrade =
 //   window.localStorage.getItem('degrade') === 'true' ||

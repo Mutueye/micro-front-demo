@@ -10,7 +10,7 @@ export interface Result<T> {
   extras?: Record<string, unknown>;
 }
 
-export interface PaginationModel<T> {
+export interface PaginationResult<T> {
   total: number;
   offset: number;
   limit: number;
@@ -19,7 +19,7 @@ export interface PaginationModel<T> {
   rows: T[];
 }
 
-export type AxiosPromiseRes<T> = Promise<AxiosResponse<Result<T>>>;
+export type PromiseResult<T> = Promise<AxiosResponse<Result<T>>>;
 
 // request contentType
 export enum ContentTypeEnum {
@@ -31,7 +31,7 @@ export enum ContentTypeEnum {
   FORM_DATA = 'multipart/form-data;charset=UTF-8',
 }
 
-export const axiosDefInstance = axios.create({
+export const axiosBaseInstance = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_PATH,
   headers: {
     'Content-Type': ContentTypeEnum.JSON,

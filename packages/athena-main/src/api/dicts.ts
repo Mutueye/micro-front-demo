@@ -1,4 +1,4 @@
-import { axiosDefInstance, PaginationModel, AxiosPromiseRes } from '@/utils/axios';
+import { axiosBaseInstance, PaginationResult, PromiseResult } from '@/utils/axios';
 
 export interface SchoolModel {
   id: string;
@@ -21,13 +21,13 @@ export interface ConfigModel {
 /**
  * 取学校列表
  */
-export const getSchoolList = (): AxiosPromiseRes<PaginationModel<SchoolModel>> => {
-  return axiosDefInstance.get('/base/schools?scope=app&organNature=Normal');
+export const getSchoolList = (): PromiseResult<PaginationResult<SchoolModel>> => {
+  return axiosBaseInstance.get('/base/schools?scope=app&organNature=Normal');
 };
 
 /**
  * 取学院配置列表
  */
-export const getConfigList = (): AxiosPromiseRes<ConfigModel[]> => {
-  return axiosDefInstance.get('/base/config/college?param=UPLUS');
+export const getConfigList = (): PromiseResult<ConfigModel[]> => {
+  return axiosBaseInstance.get('/base/config/college?param=UPLUS');
 };

@@ -1,16 +1,25 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
+import type {
+  AxiosResponse,
+  AxiosInstance,
+  InternalAxiosRequestConfig,
+  AxiosInterceptorOptions,
+} from 'axios';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface Result<T> {
+// 约定的常规返回数据结构体
+export interface ResultData<T> {
   code: number;
   status: number;
   success: boolean;
   message: string;
+  // 正常返回的数据内容
   data: T & { message?: string };
+  // 额外的返回数据，比如用户中心的extras.failureCount，返回登录错误的次数
   extras?: Record<string, unknown>;
 }
 
-export interface PaginationModel<T> {
+// 返回的分页数据
+export interface PaginationResult<T> {
   total: number;
   offset: number;
   limit: number;
@@ -19,7 +28,7 @@ export interface PaginationModel<T> {
   rows: T[];
 }
 
-export type AxiosPromiseRes<T> = Promise<AxiosResponse<Result<T>>>;
+export type PromiseResult<T> = Promise<AxiosResponse<ResultData<T>>>;
 
 // request contentType
 export enum ContentTypeEnum {
@@ -31,9 +40,57 @@ export enum ContentTypeEnum {
   FORM_DATA = 'multipart/form-data;charset=UTF-8',
 }
 
-export const axiosDefInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_PATH,
+export const axiosBaseInstance = axios.create({
   headers: {
     'Content-Type': ContentTypeEnum.JSON,
   },
 });
+
+export const setupAxiosRequestInterceptor = ({
+  instance,
+  onFulfilled,
+  onRejected,
+  options,
+}: {
+  instance: AxiosInstance;
+  onFulfilled?: (
+    value: InternalAxiosRequestConfig<any>,
+  ) => InternalAxiosRequestConfig<any> | Promise<InternalAxiosRequestConfig<any>>;
+  onRejected?: (error: any) => any;
+  options?: AxiosInterceptorOptions;
+}) => {
+  instance.interceptors.request.use(onFulfilled, onRejected, options);
+};
+
+export const setupAxiosResponseInterceptor = ({
+  instance,
+  onFulfilled,
+  onRejected,
+  options,
+}: {
+  instance: AxiosInstance;
+  onFulfilled?: (
+    value: AxiosResponse<any, any>,
+  ) => AxiosResponse<any, any> | Promise<AxiosResponse<any, any>>;
+  onRejected?: (error: any) => any;
+  options?: AxiosInterceptorOptions;
+}) => {
+  instance.interceptors.response.use(onFulfilled, onRejected, options);
+};
+
+// setupAxiosRequestInterceptor({
+//   instance: axiosBaseInstance,
+//   onFulfilled: (config) => {
+//     // config.headers = Object.assign(config.headers, { 'X-Access-Token': 'TOKEN' });
+//     return config;
+//   },
+//   onRejected: (err) => {
+//     // TODO error handler
+//     console.log('err:::', err);
+//   },
+// });
+
+// axiosBaseInstance.interceptors.request.use((config) => {
+//   console.log('config');
+//   return config;
+// });

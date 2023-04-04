@@ -45,7 +45,6 @@
     &:focus-visible,
     &:hover {
       outline: 2px solid var(--el-text-color-disabled);
-      outline-offset: 1px;
     }
   }
 </style>
