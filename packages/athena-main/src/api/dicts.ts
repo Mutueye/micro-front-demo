@@ -1,4 +1,4 @@
-import { axiosBaseInstance, PaginationResult, PromiseResult } from '@/utils/axios';
+import { axiosBaseInstance, PaginationResult, PromiseResult } from '@/utils/requestUtils';
 
 export interface SchoolModel {
   id: string;

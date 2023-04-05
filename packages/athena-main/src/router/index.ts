@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
-
 import type { RouteRecordData } from './types';
 import { layoutRoutes, LayoutEnum } from './layoutRouteConfig';
+import { basePath } from '@/utils/pathUtils';
 
 const generateAllRoutes = (staticRoutes: RouteRecordRaw[]): RouteRecordRaw[] => {
   const allRoutes: RouteRecordRaw[] = [...staticRoutes];
@@ -23,12 +23,12 @@ const generateAllRoutes = (staticRoutes: RouteRecordRaw[]): RouteRecordRaw[] => 
     });
   }
 
-  // 给每个路由增加parentRouteName和baseRouteName信息
   addRouteParentMeta(allRoutes, null, null);
 
   return allRoutes;
 };
 
+// 给每个路由的meta增加parentRouteData信息
 const addRouteParentMeta = (
   routes: RouteRecordRaw[],
   parentRoute: RouteRecordRaw | null,
@@ -57,6 +57,6 @@ export const baseRoutes: RouteRecordRaw[] = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(basePath),
   routes: generateAllRoutes(baseRoutes),
 });

@@ -1,8 +1,6 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
-import { get } from 'lodash-es';
-import { axiosBaseInstance } from '@/utils/axios';
-import { router } from '@/router';
+import { axiosBaseInstance } from '@/utils/requestUtils';
 const uplusServer = '/uranus';
 const portal = '/api/portal';
 
@@ -26,12 +24,15 @@ interface AppConfig {
   OUREA_HR?: string;
   /** 优加就业学生端地址 */
   OUREA_STUDENT?: string;
-  /** 用户中心 */
+  /** 用户中心地址 */
   QUC?: string;
   /** 首页类型：SAAS版为空; 'school': 高校首页, 'area': 区域专属首页 */
   TYPE?: HomeType;
+  /** U+首页 */
   UPLUS?: string;
+  /** U+课程 */
   UPLUS_TEACHER?: string;
+  /** 高校首页模块列表，带顺序 */
   HOME_PAGE_MODULES?: string;
   [T: string]: any;
 }
@@ -73,7 +74,7 @@ export const useAppConfigStore = defineStore('appConfig', {
         .get<AppConfig>('/get_appconfig?r=' + Math.random())
         .then((res) => {
           const homeType = import.meta.env.DEV && dev_config.TYPE ? dev_config.TYPE : res.data.TYPE;
-          console.log('res.data:::::::', res.data);
+          this.config = res.data;
           if (homeType === 'school') {
             // TODO
           } else if (homeType === 'area') {

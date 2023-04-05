@@ -5,6 +5,7 @@ import type {
   InternalAxiosRequestConfig,
   AxiosInterceptorOptions,
 } from 'axios';
+import { useAuthStore } from '@/modules/auth/store/auth';
 
 // 约定的常规返回数据结构体
 export interface ResultData<T> {
@@ -12,8 +13,8 @@ export interface ResultData<T> {
   status: number;
   success: boolean;
   message: string;
-  // 正常返回的数据内容
-  data: T & { message?: string };
+  /** 返回的数据 */
+  data: T;
   // 额外的返回数据，比如用户中心的extras.failureCount，返回登录错误的次数
   extras?: Record<string, unknown>;
 }
@@ -43,6 +44,12 @@ export enum ContentTypeEnum {
 export const axiosBaseInstance = axios.create({
   headers: {
     'Content-Type': ContentTypeEnum.JSON,
+  },
+});
+
+export const axiosUploadInstance = axios.create({
+  headers: {
+    'Content-Type': ContentTypeEnum.FORM_DATA,
   },
 });
 
@@ -78,19 +85,22 @@ export const setupAxiosResponseInterceptor = ({
   instance.interceptors.response.use(onFulfilled, onRejected, options);
 };
 
-// setupAxiosRequestInterceptor({
-//   instance: axiosBaseInstance,
-//   onFulfilled: (config) => {
-//     // config.headers = Object.assign(config.headers, { 'X-Access-Token': 'TOKEN' });
-//     return config;
-//   },
-//   onRejected: (err) => {
-//     // TODO error handler
-//     console.log('err:::', err);
-//   },
-// });
+setupAxiosRequestInterceptor({
+  instance: axiosBaseInstance,
+  onFulfilled: (config) => {
+    const token = useAuthStore().token;
+    if (token) {
+      config.headers = Object.assign(config.headers, { 'X-Access-Token': token });
+    }
+    return config;
+  },
+  onRejected: (err) => {
+    console.log('err:::', err);
+    return err;
+  },
+});
 
-// axiosBaseInstance.interceptors.request.use((config) => {
-//   console.log('config');
-//   return config;
-// });
+export enum ApiRoots {
+  portal = '/api/portal',
+  uranus = '/uranus',
+}

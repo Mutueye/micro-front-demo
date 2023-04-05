@@ -74,7 +74,7 @@ export default defineConfig(({ mode }) => {
       outDir: `../../dist/${process.env.npm_package_name}`,
     },
     ...baseConfig,
-    base: `${process.env.VITE_APP_BASE_PATH}`,
+    base: process.env.VITE_APP_BASE_PATH ? process.env.VITE_APP_BASE_PATH : '/',
     server: {
       open: true,
       host: '0.0.0.0',

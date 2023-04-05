@@ -108,6 +108,7 @@ importers:
       eslint: ^8.31.0
       eslint-config-prettier: ^8.6.0
       eslint-plugin-vue: ^9.8.0
+      js-base64: ^3.7.5
       jsdom: ^20.0.3
       lodash-es: ^4.17.21
       mitt: ^3.0.0
@@ -142,6 +143,7 @@ importers:
       axios: registry.npmmirror.com/axios/1.3.4
       color2k: registry.npmmirror.com/color2k/2.0.2
       element-plus: registry.npmmirror.com/element-plus/2.3.1_vue@3.2.47
+      js-base64: registry.npmmirror.com/js-base64/3.7.5
       lodash-es: registry.npmmirror.com/lodash-es/4.17.21
       mitt: registry.npmmirror.com/mitt/3.0.0
       pinia: registry.npmmirror.com/pinia/2.0.33_hmuptsblhheur2tugfgucj7gc4
@@ -4926,6 +4928,12 @@ packages:
     version: 1.18.2
     hasBin: true
     dev: true
+
+  registry.npmmirror.com/js-base64/3.7.5:
+    resolution: {integrity: sha512-3MEt5DTINKqfScXKfJFrRbxkrnk2AxPWGBL/ycjz4dK8iqiSJ06UxD8jh8xuh6p10TX4t2+7FsBYVxxQbMg+qA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/js-base64/-/js-base64-3.7.5.tgz}
+    name: js-base64
+    version: 3.7.5
+    dev: false
 
   registry.npmmirror.com/js-beautify/1.14.6:
     resolution: {integrity: sha512-GfofQY5zDp+cuHc+gsEXKPpNw2KbPddreEo35O6jT6i0RVK6LhsoYBhq5TvK4/n74wnA0QbK8gGd+jUZwTMKJw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/js-beautify/-/js-beautify-1.14.6.tgz}
