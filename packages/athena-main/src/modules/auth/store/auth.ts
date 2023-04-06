@@ -1,5 +1,10 @@
 import { defineStore } from 'pinia';
+import Wujie from 'wujie-vue3';
 import { axiosBaseInstance, ApiRoots, ResultData } from '@/utils/requestUtils';
+import { goLogout } from '@/utils/authUtils';
+import { baseLocation } from '@/utils/pathUtils';
+
+const { bus } = Wujie;
 
 export interface UserInfo {
   /** 头像地址 */
@@ -50,6 +55,7 @@ export const useAuthStore = defineStore('auth', {
     /** 保存Token */
     setToken(token: string) {
       this.token = token;
+      // bus.$emit('login', this.token);
     },
 
     /** 获取用户信息：头像/memberId/手机号/账号等 */
@@ -85,10 +91,16 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
-    clearAuth() {
-      this.token = '';
-      this.userInfo = {};
-      this.identity = '';
+    logout() {
+      if (this.token) {
+        this.token = '';
+        this.userInfo = {};
+        this.identity = '';
+        goLogout();
+      } else {
+        location.href = baseLocation;
+      }
+      // bus.$emit('logout');
     },
   },
 });

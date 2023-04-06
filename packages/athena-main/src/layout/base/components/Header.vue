@@ -5,12 +5,14 @@
       <i inline-block align-middle text-size-32px class="i-uplus:logo" />
       <div class="text-size-large font-semibold ml-10px">产教融合云</div>
     </div>
-    <AuthState />
-    <!-- <ThemeToggler /> -->
+    <div class="flex flex-row items-center">
+      <ThemeToggler class="mr-space-xxxl" />
+      <AuthState />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
   import AuthState from './AuthState.vue';
-  // import ThemeToggler from '@/components/ThemeToggler.vue';
+  import ThemeToggler from '@/components/ThemeToggler.vue';
 </script>

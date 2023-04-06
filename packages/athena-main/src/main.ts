@@ -2,15 +2,11 @@ import { createApp } from 'vue';
 import ElementPlus from 'element-plus';
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import { initQstThemeStyles } from 'qst-ui-system';
-// import WujieVue from 'wujie-vue3';
 
 import App from '@/App.vue';
 import { router } from '@/router/index';
 import pinia from '@/store';
 import { useAppConfigStore } from '@/store/appConfig';
-// import lifecycles from './lifecycle';
-
-// const { setupApp } = WujieVue;
 
 // css reset
 import '@/styles/reset.scss';
@@ -35,22 +31,3 @@ useAppConfigStore()
   .then(() => {
     app.mount('#app');
   });
-
-// const degrade =
-//   window.localStorage.getItem('degrade') === 'true' ||
-//   !window.Proxy ||
-//   !window.CustomElementRegistry;
-// const props = {
-//   jump: (name: string) => {
-//     router.push({ name });
-//   },
-// };
-
-// setupApp({
-//   name: 'athena-home-banner',
-//   url: '//localhost:5200/',
-//   exec: true,
-//   props,
-//   degrade,
-//   ...lifecycles,
-// });

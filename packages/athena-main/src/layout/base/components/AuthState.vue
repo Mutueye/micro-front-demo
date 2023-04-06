@@ -2,10 +2,14 @@
 <template>
   <div v-if="token" class="flex flex-row items-center">
     <el-dropdown>
-      <img :src="avatar" class="rounded-full w-40px h-40px" />
+      <div class="flex flex-row items-center">
+        <img :src="avatar" class="rounded-full w-40px h-40px" />
+        <div class="color-text-primary text-size-16px ml-space-xs">{{ userInfo.name }}</div>
+      </div>
+
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
+          <el-dropdown-item @click="authStore.logout">退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>
@@ -21,7 +25,7 @@
   import { computed } from 'vue';
   import { storeToRefs } from 'pinia';
   import { useAuthStore } from '@/modules/auth/store/auth';
-  import { goLogin, logout } from '@/utils/authUtils';
+  import { goLogin } from '@/utils/authUtils';
   import defaultAvatar from '@/assets/default-avatar.png';
 
   const authStore = useAuthStore();

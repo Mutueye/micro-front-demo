@@ -1,7 +1,5 @@
 import { Base64 } from 'js-base64';
 import { useAppConfigStore } from '@/store/appConfig';
-import { useAuthStore } from '@/modules/auth/store/auth';
-import { baseLocation } from './pathUtils';
 
 export const redirectUri = encodeURIComponent(
   `${location.origin}/api/login?redirect_uri=${location.href}`,
@@ -36,14 +34,9 @@ export function qucLayoutJson() {
   }
 }
 
-/** 退出登录 */
-export function logout() {
-  if (useAuthStore().token) {
-    useAuthStore().clearAuth();
-    location.href = `${
-      useAppConfigStore().config.QUC
-    }/logout?theme=athena&layout=${qucLayoutJson()}&redirect_uri=${redirectUri}`;
-  } else {
-    location.href = baseLocation;
-  }
-}
+/** 跳转到登出页面 */
+export const goLogout = () => {
+  location.href = `${
+    useAppConfigStore().config.QUC
+  }/logout?theme=athena&layout=${qucLayoutJson()}&redirect_uri=${redirectUri}`;
+};

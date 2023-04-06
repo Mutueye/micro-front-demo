@@ -3,6 +3,7 @@
 </template>
 
 <script setup lang="ts">
+  import { onMounted } from 'vue';
   import { useAppConfigStore } from '@/store/appConfig';
   import { useAuthStore } from '../../store/auth';
   import { useAuthProcess } from '@/componsables/useAuthProcess';
@@ -20,17 +21,20 @@
   const syncUrl = `${
     useAppConfigStore().config.QUC
   }/login?theme=athena&fallback=${encodeURIComponent(fallback)}`;
-  window.addEventListener('message', (e: MessageEvent<string>) => {
-    // 已登录，data 为当前用户的 token；未登录，则为 nosession
-    const { data, origin } = e;
-    if (syncUrl.includes(origin) && data !== 'nosession') {
-      authStore.setToken(data);
-      // 处理登录后的信息读取
-      processAuth(() => {
+
+  onMounted(() => {
+    window.addEventListener('message', (e: MessageEvent<string>) => {
+      // 已登录，data 为当前用户的 token；未登录，则为 nosession
+      const { data, origin } = e;
+      if (syncUrl.includes(origin) && data !== 'nosession') {
+        authStore.setToken(data);
+        // 处理登录后的信息读取
+        processAuth(() => {
+          emit('synced');
+        });
+      } else {
         emit('synced');
-      });
-    } else {
-      emit('synced');
-    }
+      }
+    });
   });
 </script>
