@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia';
-import Wujie from 'wujie-vue3';
+// import Wujie from 'wujie-vue3';
 import { axiosBaseInstance, ApiRoots, ResultData } from '@/utils/requestUtils';
 import { goLogout } from '@/utils/authUtils';
 import { baseLocation } from '@/utils/pathUtils';
 
-const { bus } = Wujie;
+// const { bus } = Wujie;
 
 export interface UserInfo {
   /** 头像地址 */
