@@ -83,6 +83,7 @@ export const mixModeBaseColors = {
 export interface ThemeOption {
   namespace: string;
   themeList: UITheme[];
+  onStylesSet?: () => void;
 }
 
 export const defaultThemeOption: ThemeOption = {
@@ -99,20 +100,24 @@ export const initQstThemeStyles = (option?: ThemeOption) => {
   head.appendChild(style);
   style.setAttribute('id', 'theme');
 
-  const finalOption = Object.assign({}, defaultThemeOption, option ? option : {});
-  currentThemeList.push(...finalOption.themeList);
-
   // inject theme css var styles to the style tag
-  injectThemeStyle(finalOption);
+  injectThemeStyle(option);
 
   // set the first theme in theme list as current enabled theme
   setThemeClassByIndex(0);
 };
 
 export const injectThemeStyle = (option: ThemeOption) => {
+  // combind default options
+  const finalOption = Object.assign({}, defaultThemeOption, option ? option : {});
+  // clear theme list
+  currentThemeList.length = 0;
+  // set current theme list
+  currentThemeList.push(...finalOption.themeList);
+
   const styleEl = document.head.querySelector('#theme') as HTMLElement;
   let styleStr = '';
-  const { namespace, themeList } = option;
+  const { namespace, themeList } = finalOption;
   themeList.forEach((theme) => {
     Object.keys(DayNightModeEnum).forEach((mode) => {
       const themeStyleStr = generateThemeStyle({
@@ -128,6 +133,9 @@ export const injectThemeStyle = (option: ThemeOption) => {
     });
   });
   styleEl.innerText = styleStr;
+  if (finalOption && typeof finalOption.onStylesSet === 'function') {
+    finalOption.onStylesSet();
+  }
 };
 
 const generateThemeStyle = ({
