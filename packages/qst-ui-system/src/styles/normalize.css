@@ -1,3 +1,6 @@
+/*****************
+ 初始化css样式 
+ *****************/
 html,
 body,
 body div,
@@ -124,17 +127,17 @@ table {
   font-size: inherit;
   border-spacing: 0;
   border-collapse: separate;
-  th {
-    font-weight: bold;
-    vertical-align: bottom;
-  }
-  td {
-    font-weight: normal;
-    vertical-align: top;
-    img {
-      vertical-align: top;
-    }
-  }
+}
+table th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+table td {
+  font-weight: normal;
+  vertical-align: top;
+}
+table td img {
+  vertical-align: top;
 }
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
@@ -149,4 +152,11 @@ textarea {
   display: block;
   clear: both;
   content: ' ';
+}
+
+:root {
+  font-family: 'PingFang SC, Microsoft YaHei, Hiragino Sans GB, SimSun, sans-serif';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: grayscale;
 }

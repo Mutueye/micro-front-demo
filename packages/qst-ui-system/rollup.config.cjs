@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const glob = require('glob');
+// const glob = require('glob');
 const terser = require('@rollup/plugin-terser');
 const typescript = require('@rollup/plugin-typescript');
-const scss = require('rollup-plugin-scss');
+const css = require('rollup-plugin-import-css');
 const pkg = require('./package.json');
 
 const banner = `/**
@@ -62,10 +62,7 @@ module.exports = outputList.map((outputData) => {
     output,
     plugins: [
       typescript({ tsconfig: './tsconfig.json' }),
-      scss({
-        fileName: 'index.css',
-        watch: glob.sync('src/**/*.@(sa|sc|c)ss'),
-      }),
+      css({ minify: true }),
       outputData.min ? terser() : null,
     ],
   };

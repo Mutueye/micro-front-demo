@@ -199,6 +199,7 @@ importers:
       prettier: ^2.8.1
       rimraf: ^3.0.2
       rollup: ^3.9.1
+      rollup-plugin-import-css: ^3.2.1
       rollup-plugin-scss: ^4.0.0
       sass: ^1.57.1
       typescript: ^4.9.4
@@ -219,6 +220,7 @@ importers:
       prettier: registry.npmmirror.com/prettier/2.8.7
       rimraf: registry.npmmirror.com/rimraf/3.0.2
       rollup: registry.npmmirror.com/rollup/3.20.2
+      rollup-plugin-import-css: registry.npmmirror.com/rollup-plugin-import-css/3.2.1_rollup@3.20.2
       rollup-plugin-scss: registry.npmmirror.com/rollup-plugin-scss/4.0.0
       sass: registry.npmmirror.com/sass/1.60.0
       typescript: registry.npmmirror.com/typescript/4.9.5
@@ -7078,6 +7080,18 @@ packages:
     hasBin: true
     dependencies:
       glob: registry.npmmirror.com/glob/7.2.3
+    dev: true
+
+  registry.npmmirror.com/rollup-plugin-import-css/3.2.1_rollup@3.20.2:
+    resolution: {integrity: sha512-svr1JrBknT5ndEUM8nPaemTx/uF/5Tf4FAMQxvAYx2K9Sx7hL+JwB/rPuB1ZmUE1rjCnQHnz/fgik+noYM5+0w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup-plugin-import-css/-/rollup-plugin-import-css-3.2.1.tgz}
+    id: registry.npmmirror.com/rollup-plugin-import-css/3.2.1
+    name: rollup-plugin-import-css
+    version: 3.2.1
+    peerDependencies:
+      rollup: ^2.x.x || ^3.x.x
+    dependencies:
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/5.0.2_rollup@3.20.2
+      rollup: registry.npmmirror.com/rollup/3.20.2
     dev: true
 
   registry.npmmirror.com/rollup-plugin-scss/4.0.0:

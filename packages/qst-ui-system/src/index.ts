@@ -1,3 +1,3 @@
 export * from './defaultThemeList';
-export * from './qstThemeStyles';
-export * from './unocssThemeConfig';
+export * from './theme';
+export * from './themeForUnocss';

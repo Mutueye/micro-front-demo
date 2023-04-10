@@ -10,7 +10,7 @@ interface ThemeAnimation {
 interface Colors {
   [key: string]: Colors | string;
 }
-export interface Theme {
+interface Theme {
   width?: Record<string, string>;
   height?: Record<string, string>;
   maxWidth?: Record<string, string>;
@@ -186,7 +186,7 @@ export const generateUnocssTheme: (namespace?: string) => Theme = (namespace = '
       fill: generateCssVarFromConfig(cssVarConfig, 'fill-color', namespace),
     },
     fontFamily: {
-      main: 'PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif',
+      main: 'PingFang SC, Microsoft YaHei, Hiragino Sans GB, SimSun, sans-serif',
     },
     fontSize: {
       ...(generateCssVarFromConfig(cssVarConfig, 'font-size', namespace) as Record<string, string>),

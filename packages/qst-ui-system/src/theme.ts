@@ -1,5 +1,7 @@
 import { mix, toHex } from 'color2k';
 import { defaultThemeList } from './defaultThemeList';
+import normalizeStyles from './styles/normalize.css';
+import overrideElementPlusStyles from './styles/override_element_plus.css';
 
 // theme css variable categories
 export enum ThemeCategory {
@@ -80,20 +82,34 @@ export const mixModeBaseColors = {
   },
 };
 
+/** 主题选项 */
 export interface ThemeOption {
-  namespace: string;
-  themeList: UITheme[];
+  /** 主题css变量命名空间 默认--el */
+  namespace?: string;
+  /** 主题列表 */
+  themeList?: UITheme[];
+  /** 主题样式设置完成后的回调函数 */
   onStylesSet?: () => void;
+  /** 是否包含css重置样式(reset/normalize) 默认是 */
+  cssReset?: boolean;
+  /** 是否包含覆盖element-plus样式 默认是 */
+  overrideElementPlus?: boolean;
 }
 
-export const defaultThemeOption: ThemeOption = {
+const defaultThemeOption: ThemeOption = {
   namespace: '--el',
   themeList: defaultThemeList,
+  cssReset: true,
+  overrideElementPlus: true,
 };
 
 export const currentThemeList: UITheme[] = [];
 
-export const initQstThemeStyles = (option?: ThemeOption) => {
+/**
+ * 初始化QstUI
+ * @param option {ThemeOption} UI主题选项
+ */
+export const initQstTheme = (option?: ThemeOption) => {
   // add theme style tag to html header
   const head = document.head || document.getElementsByTagName('head')[0];
   const style = document.createElement('style');
@@ -132,10 +148,23 @@ export const injectThemeStyle = (option: ThemeOption) => {
       }
     });
   });
-  styleEl.innerText = styleStr;
+  styleEl.innerText = `${generateResetStyles(finalOption)} ${styleStr}`;
   if (finalOption && typeof finalOption.onStylesSet === 'function') {
     finalOption.onStylesSet();
   }
+};
+
+/** 生成初始化样式&组件库(比如element-plus）的全局覆盖样式 */
+const generateResetStyles = (option: ThemeOption) => {
+  const { namespace, overrideElementPlus, cssReset } = option;
+
+  let styleStr = `${
+    cssReset ? normalizeStyles : ''
+  } body { font-size: var(${namespace}-font-size-base); background-color: var(${namespace}-bg-color-page); }`;
+  if (overrideElementPlus) {
+    styleStr += (overrideElementPlusStyles as string).replace('--el-', `${namespace}-`);
+  }
+  return styleStr;
 };
 
 const generateThemeStyle = ({
