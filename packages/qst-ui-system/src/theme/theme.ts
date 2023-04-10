@@ -1,7 +1,7 @@
 import { mix, toHex } from 'color2k';
 import { defaultThemeList } from './defaultThemeList';
-import normalizeStyles from './styles/normalize.css';
-import overrideElementPlusStyles from './styles/override_element_plus.css';
+import normalizeStyles from '../styles/normalize.css';
+import overrideElementPlusStyles from '../styles/override_element_plus.css';
 
 // theme css variable categories
 export enum ThemeCategory {

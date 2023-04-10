@@ -16,16 +16,9 @@ const resolve = (_path) => path.resolve(__dirname, _path);
 
 const outputList = [
   {
-    file: resolve('dist/umd/index.js'),
+    file: resolve('dist/index.min.js'),
     format: 'umd',
-    name: 'TableFlowGraph',
-    banner,
-    sourcemap: true,
-  },
-  {
-    file: resolve('dist/umd/index.min.js'),
-    format: 'umd',
-    name: 'TableFlowGraph',
+    name: 'qst-ui-system',
     banner,
     min: true,
     sourcemap: false,
@@ -34,13 +27,15 @@ const outputList = [
     file: pkg.main,
     format: 'cjs',
     banner,
-    sourcemap: true,
+    min: true,
+    sourcemap: false,
   },
   {
     file: pkg.module,
     format: 'es',
     banner,
-    sourcemap: true,
+    min: true,
+    sourcemap: false,
   },
 ];
 
