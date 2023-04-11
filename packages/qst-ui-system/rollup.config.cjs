@@ -15,14 +15,14 @@ const banner = `/**
 const resolve = (_path) => path.resolve(__dirname, _path);
 
 const outputList = [
-  {
-    file: resolve('dist/index.min.js'),
-    format: 'umd',
-    name: 'qst-ui-system',
-    banner,
-    min: true,
-    sourcemap: false,
-  },
+  // {
+  //   file: resolve('dist/index.min.js'),
+  //   format: 'umd',
+  //   name: 'qst-ui-system',
+  //   banner,
+  //   min: true,
+  //   sourcemap: false,
+  // },
   {
     file: pkg.main,
     format: 'cjs',

@@ -1,3 +1,5 @@
+import { cssVarCodex } from './theme';
+
 type Arrayable<T> = T | T[];
 
 interface ThemeAnimation {
@@ -70,20 +72,55 @@ export interface ConfigList {
   [key: string]: ConfigList | string;
 }
 
-// 主题配置css变量对照表
-// TODO get css var config from cssVarCodex
-const cssVarConfig: CssVarConfigType = {
-  color: ['primary', 'success', 'warning', 'danger', 'error', 'info'],
-  'text-color': ['primary', 'regular', 'secondary', 'placeholder', 'disabled'],
-  'bg-color': ['DEFAULT', 'overlay', 'page', 'secondary'],
-  'border-color': ['DEFAULT', 'light', 'lighter', { extra: ['light'] }, 'dark', 'darker'],
-  'fill-color': ['DEFAULT', 'light', 'lighter', { extra: ['light'] }, 'dark', 'darker', 'blank'],
-  'border-radius': ['base', 'small', 'round', 'circle'],
-  'box-shadow': ['DEFAULT', 'light', 'lighter', 'dark'],
-  space: ['xxxs', 'xxs', 'xs', 'sm', 'md', 'DEFAULT', 'lg', 'xl', 'xxl', 'xxxl'],
-  'font-size': ['extra-small', 'small', 'base', 'medium', 'large', 'extra-large'],
-  'component-size': ['small', 'DEFAULT', 'large'],
+/** 主题变量配置的数组转换为unocss可用的数组: 例：颜色变量'extra-light'需要转换为{ extra: ['light'] } */
+const transformStringArrayDash = (arr: string[]) => {
+  const objectKeysArrayObj: CssVarConfigType = {};
+  const result: (string | CssVarConfigType)[] = [];
+  arr.forEach((str) => {
+    const dashArray = str.split('-');
+    if (dashArray.length > 1) {
+      const key = dashArray.shift();
+      const val = transformStringArrayDash(dashArray);
+      if (objectKeysArrayObj[key]) {
+        objectKeysArrayObj[key].push(...val);
+      } else {
+        objectKeysArrayObj[key] = val;
+        result.push({ [key]: objectKeysArrayObj[key] });
+      }
+    } else {
+      result.push(str);
+    }
+  });
+  return result;
 };
+
+/** Get css var config from cssVarCodex */
+const getConfigFromCodex = () => {
+  const config: CssVarConfigType = {};
+  for (const key in cssVarCodex) {
+    if (key.includes('color')) {
+      config[key] = transformStringArrayDash(cssVarCodex[key]);
+    } else {
+      config[key] = cssVarCodex[key];
+    }
+  }
+  return config;
+};
+
+// 主题配置css变量对照表
+// {
+//   color: ['primary', 'success', 'warning', 'danger', 'error', 'info'],
+//   'text-color': ['primary', 'regular', 'secondary', 'placeholder', 'disabled'],
+//   'bg-color': ['DEFAULT', 'overlay', 'page', 'secondary'],
+//   'border-color': ['DEFAULT', 'light', 'lighter', { extra: ['light'] }, 'dark', 'darker'],
+//   'fill-color': ['DEFAULT', 'light', 'lighter', { extra: ['light'] }, 'dark', 'darker', 'blank'],
+//   'border-radius': ['base', 'small', 'round', 'circle'],
+//   // 'box-shadow': ['DEFAULT', 'light', 'lighter', 'dark'],
+//   space: ['xxxs', 'xxs', 'xs', 'sm', 'md', 'DEFAULT', 'lg', 'xl', 'xxl', 'xxxl'],
+//   'font-size': ['extra-small', 'small', 'base', 'medium', 'large', 'extra-large'],
+//   'component-size': ['small', 'DEFAULT', 'large'],
+// };
+const cssVarConfig: CssVarConfigType = getConfigFromCodex();
 
 // 生成主题色变量配置表
 const generateMainColors = (namespace: string) => {
