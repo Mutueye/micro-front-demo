@@ -13,6 +13,10 @@
       "path": "../packages/athena-home-banner"
     },
     {
+      "name": "packages/vue2-test",
+      "path": "../packages/vue2-test"
+    },
+    {
       "name": "packages/qst-ui-system",
       "path": "../packages/qst-ui-system"
     }

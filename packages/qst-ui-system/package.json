@@ -1,6 +1,7 @@
 {
   "name": "qst-ui-system",
   "version": "0.0.1",
+  "packageManager": "pnpm@7.18.1",
   "description": "qst ui system",
   "author": "mutueye <mutuyueniao@gmail.com>",
   "license": "MIT",
@@ -23,8 +24,10 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint:es": "eslint --ext .js,.ts --ignore-path .eslintignore --fix src",
-    "lint:es:check": "eslint --ext .js,.ts --ignore-path .eslintignore src",
-    "prepare": "simple-git-hooks"
+    "lint:es:check": "eslint --ext .js,.ts --ignore-path .eslintignore src"
+  },
+  "dependencies": {
+    "color2k": "^2.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.2.1",
@@ -52,8 +55,5 @@
   "lint-staged": {
     "./**/*.{vue,js,ts,jsx,tsx,json}": "eslint --ignore-path .eslintignore --fix",
     "./**/*.{vue,js,ts,jsx,tsx,md,json,scss,css,html}": "prettier . --write"
-  },
-  "dependencies": {
-    "color2k": "^2.0.1"
   }
 }

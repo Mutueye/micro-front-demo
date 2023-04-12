@@ -5,12 +5,10 @@
   "type": "module",
   "packageManager": "pnpm@7.18.1",
   "scripts": {
-    "dev": "vite --mode development",
-    "dev:tev": "vite --mode test",
-    "dev:prod": "vite --mode production",
+    "dev": "vite --mode dev",
+    "dev:prod": "vite --mode prod",
     "dev:local": "vite --mode local",
-    "dev:release": "vite --mode release",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc && vite build --mode prod",
     "preview": "vite preview",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
@@ -61,7 +59,7 @@
     "vue-tsc": "^1.0.22"
   },
   "lint-staged": {
-    "./**/*.{vue,js,ts,jsx,tsx,json}": "eslint --ignore-path .eslintignore --fix",
+    "./**/*.{vue,js,ts,jsx,tsx}": "eslint --ignore-path .eslintignore --fix",
     "./**/*.{vue,js,ts,jsx,tsx,md,json,scss,css,html}": "prettier . --write",
     "./**/*.{scss,css,vue}": "stylelint --fix"
   }
