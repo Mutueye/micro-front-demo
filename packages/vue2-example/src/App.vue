@@ -1,85 +1,27 @@
 <script setup lang="ts">
-  import HelloWorld from './components/HelloWorld.vue';
+  import { onMounted } from 'vue';
+  import { setThemeClassByIndex } from 'qst-ui-system';
+  import { useToggleDayNight } from '@/composables/useToggleDayNight';
+  import AboutView from './views/AboutView.vue';
+
+  const { toggleDayNight } = useToggleDayNight();
+  onMounted(() => {
+    // 如果当前是是WUJIE微前端子应用
+    if (window.__POWERED_BY_WUJIE__) {
+      // 切换夜间模式事件
+      window.$wujie?.bus.$on('toggle-dark', () => {
+        toggleDayNight();
+      });
+      // 主题切换事件
+      window.$wujie?.bus.$on('theme-change', (themIndex: number) => {
+        setThemeClassByIndex(themIndex);
+      });
+    }
+  });
 </script>
 
 <template>
-  <div id="app">
-    <header>
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-      <div class="wrapper">
-        <HelloWorld msg="You did it!" />
-
-        <nav>
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
-        </nav>
-      </div>
-    </header>
-
-    <router-view />
+  <div class="w-1200px py-space mx-auto">
+    <AboutView />
   </div>
 </template>
-
-<style scoped>
-  header {
-    max-height: 100vh;
-    line-height: 1.5;
-  }
-
-  .logo {
-    display: block;
-    margin: 0 auto 2rem;
-  }
-
-  nav {
-    width: 100%;
-    margin-top: 2rem;
-    font-size: 12px;
-    text-align: center;
-  }
-
-  nav a.router-link-exact-active {
-    color: var(--color-text);
-  }
-
-  nav a.router-link-exact-active:hover {
-    background-color: transparent;
-  }
-
-  nav a {
-    display: inline-block;
-    padding: 0 1rem;
-    border-left: 1px solid var(--color-border);
-  }
-
-  nav a:first-of-type {
-    border: 0;
-  }
-
-  @media (min-width: 1024px) {
-    header {
-      display: flex;
-      place-items: center;
-      padding-right: calc(var(--section-gap) / 2);
-    }
-
-    .logo {
-      margin: 0 2rem 0 0;
-    }
-
-    header .wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      place-items: flex-start;
-    }
-
-    nav {
-      padding: 1rem 0;
-      margin-top: 1rem;
-      margin-left: -1rem;
-      font-size: 1rem;
-      text-align: left;
-    }
-  }
-</style>

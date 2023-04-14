@@ -1,15 +1,18 @@
 import Vue from 'vue';
 import { createPinia, PiniaVuePlugin } from 'pinia';
+import ElementUI from 'element-ui';
 import { initQstTheme } from 'qst-ui-system';
 
 import App from './App.vue';
 import router from './router';
 
-import './assets/main.css';
+import 'element-ui/lib/theme-chalk/index.css';
+import './styles/element-override.css';
 // unocss styles
 import 'uno.css';
 
 Vue.use(PiniaVuePlugin);
+Vue.use(ElementUI);
 
 new Vue({
   router,
@@ -17,4 +20,4 @@ new Vue({
   render: (h) => h(App),
 }).$mount('#app');
 
-initQstTheme();
+initQstTheme({ overrideElementPlus: false });

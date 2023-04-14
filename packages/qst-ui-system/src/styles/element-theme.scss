@@ -1,9 +1,9 @@
 /** 命名空间，默认--el，如果在initQstTheme中指定了其他命名空间，这里需要同步修改 */
-$namespace: '--el';
+$qstnamespace: '--el' !default;
 
 // join-var-name(('button', 'text-color')) => '--el-button-text-color'
 @function join-var-name($list) {
-  $name: '--' + $namespace;
+  $name: $qstnamespace;
 
   @each $item in $list {
     @if $item != '' {
@@ -521,7 +521,7 @@ $--input-mini-height: var(#{join-var-name('component-size-small')});
 /* Button
 -------------------------- */
 /// fontSize||Font|1
-// $--button-font-size: $--font-size-base !default;
+$--button-font-size: $--font-size-base !default;
 /// fontWeight||Font|1
 // $--button-font-weight: $--font-weight-primary !default;
 /// borderRadius||Border|2
@@ -534,7 +534,7 @@ $--button-padding-vertical: calc(
 // $--button-padding-horizontal: 20px !default;
 
 /// fontSize||Font|1
-// $--button-medium-font-size: $--font-size-base !default;
+$--button-medium-font-size: $--font-size-base !default;
 /// borderRadius||Border|2
 // $--button-medium-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
@@ -545,7 +545,7 @@ $--button-medium-padding-vertical: calc(
 // $--button-medium-padding-horizontal: 20px !default;
 
 /// fontSize||Font|1
-// $--button-small-font-size: 12px !default;
+$--button-small-font-size: var(#{join-var-name('font-size-small')});
 // $--button-small-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
 $--button-small-padding-vertical: calc(
@@ -554,7 +554,7 @@ $--button-small-padding-vertical: calc(
 /// padding||Spacing|3
 // $--button-small-padding-horizontal: 15px !default;
 /// fontSize||Font|1
-// $--button-mini-font-size: 12px !default;
+$--button-mini-font-size: var(#{join-var-name('font-size-extra-small')});
 // $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
 $--button-mini-padding-vertical: calc(
@@ -778,7 +778,7 @@ $--card-padding: var(#{join-var-name('space-md')});
 // $--slider-main-background-color: $--color-primary !default;
 /// color||Color|0
 // $--slider-runway-background-color: $--border-color-light !default;
-// $--slider-button-hover-color: color.mix($--color-primary, black, 97%) !default;
+$--slider-button-hover-color: var(#{join-var-name('color-primary-dark-1')});
 // $--slider-stop-background-color: $--color-white !default;
 // $--slider-disable-color: $--color-text-placeholder !default;
 // $--slider-margin: 16px 0 !default;

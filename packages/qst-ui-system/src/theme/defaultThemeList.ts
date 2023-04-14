@@ -70,7 +70,8 @@ export const defaultThemeList: UITheme[] = [
           'extra-large': '20px',
         },
         'component-size': {
-          small: '24px',
+          mini: '24px',
+          small: '28px',
           DEFAULT: '36px',
           large: '40px',
         },
@@ -141,7 +142,8 @@ export const defaultThemeList: UITheme[] = [
           'extra-large': '20px',
         },
         'component-size': {
-          small: '24px',
+          mini: '24px',
+          small: '28px',
           DEFAULT: '36px',
           large: '40px',
         },
@@ -154,7 +156,7 @@ export const defaultThemeList: UITheme[] = [
       light: {
         color: {
           primary: '#67aef7',
-          success: '#a8d3a6',
+          success: '#62d65c',
           warning: '#f39800',
           danger: '#fc7373',
           info: '#969eb3',
@@ -217,15 +219,16 @@ export const defaultThemeList: UITheme[] = [
           'extra-large': '20px',
         },
         'component-size': {
-          small: '24px',
-          DEFAULT: '32px',
-          large: '40px',
+          mini: '24px',
+          small: '32px',
+          DEFAULT: '40px',
+          large: '48px',
         },
       },
       dark: {
         color: {
           primary: '#67aef7',
-          success: '#a8d3a6',
+          success: '#62d65c',
           warning: '#f39800',
           danger: '#fc7373',
           info: '#969eb3',
@@ -288,9 +291,10 @@ export const defaultThemeList: UITheme[] = [
           'extra-large': '20px',
         },
         'component-size': {
-          small: '24px',
-          DEFAULT: '32px',
-          large: '40px',
+          mini: '24px',
+          small: '32px',
+          DEFAULT: '40px',
+          large: '48px',
         },
       },
     },

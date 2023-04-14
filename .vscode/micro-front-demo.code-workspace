@@ -34,7 +34,11 @@
       "source.fixAll.stylelint": true
     },
     "diffEditor.wordWrap": "off",
-    "unocss.root": ["packages/athena-main", "packages/athena-home-banner"],
+    "unocss.root": [
+      "packages/athena-main",
+      "packages/athena-home-banner",
+      "packages/vue2-example"
+    ],
     "colorize.languages": [
       "json",
       "css",

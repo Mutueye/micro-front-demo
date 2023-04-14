@@ -5,7 +5,7 @@ const terser = require('@rollup/plugin-terser');
 const typescript = require('@rollup/plugin-typescript');
 const css = require('rollup-plugin-import-css');
 const pkg = require('./package.json');
-const copy = require('rollup-plugin-copy');
+// const copy = require('rollup-plugin-copy');
 
 const banner = `/**
  * qst-ui-system v${pkg.version}
@@ -59,9 +59,9 @@ module.exports = outputList.map((outputData) => {
     plugins: [
       typescript({ tsconfig: './tsconfig.json' }),
       css({ minify: true }),
-      copy({
-        targets: [{ src: 'src/styles/element-theme.scss', dest: 'dist' }],
-      }),
+      // copy({
+      //   targets: [{ src: 'src/styles/element-theme.scss', dest: 'dist' }],
+      // }),
       outputData.min ? terser() : null,
     ],
   };
