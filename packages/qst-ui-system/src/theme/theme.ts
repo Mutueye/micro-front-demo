@@ -164,6 +164,7 @@ const generateResetStyles = (option: ThemeOption) => {
   if (overrideElementPlus) {
     styleStr += (overrideElementPlusStyles as string).replace('--el-', `${namespace}-`);
   }
+  styleStr += 'html { --el-color-white: #ffffff; --el-color-black: #000000; }';
   return styleStr;
 };
 

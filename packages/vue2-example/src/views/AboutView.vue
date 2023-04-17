@@ -65,5 +65,6 @@
         <el-button type="primary" icon="el-icon-delete"></el-button>
       </el-button-group>
     </div>
+    <i class="iconfont ls-delete-col" />
   </div>
 </template>

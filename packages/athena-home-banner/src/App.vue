@@ -1,9 +1,11 @@
 <template>
-  <div class="w-full h-300px bg-theme flex flex-col items-center justify-center">
-    <div class="text-size-18px font-bold color-white">子应用：athena-home-banner</div>
-    <div class="text-size-16px font-bold mt-space color-white">
+  <div class="w-full h-300px bg-bg-secondary flex flex-col items-center justify-center">
+    <div class="text-size-18px font-bold color-primary">子应用：athena-home-banner</div>
+    <div class="text-size-16px font-bold mt-space color-text-primary">
       登录状态：{{ token ? `已登录，token: ${token}` : '未登录' }}
     </div>
+    <i inline-block align-middle text-size-large class="i-mdi-check-circle-outline" />
+    <!-- <i class="iconfont ls-delete-col" /> -->
   </div>
 </template>
 
