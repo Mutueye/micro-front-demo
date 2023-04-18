@@ -1,5 +1,5 @@
 <template>
-  <WuJie width="100%" height="auto" name="vue2-demo" url="//localhost:5230/" :sync="true" />
+  <WuJie width="100%" height="auto" name="vue2demo" url="//localhost:5230/" :sync="true" />
 </template>
 
 <script lang="ts" setup>

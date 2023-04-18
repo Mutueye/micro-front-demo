@@ -65,6 +65,215 @@
         <el-button type="primary" icon="el-icon-delete"></el-button>
       </el-button-group>
     </div>
+    <h1 class="mt-space-xl">测试iconfont引入字体图标</h1>
     <i class="iconfont ls-delete-col" />
+    <h1 class="mt-space-xl">文字链接</h1>
+    <div class="mt-space-xs">
+      <el-link href="https://element.eleme.io" target="_blank">默认链接</el-link>
+      <el-link type="primary">主要链接</el-link>
+      <el-link type="success">成功链接</el-link>
+      <el-link type="warning">警告链接</el-link>
+      <el-link type="danger">危险链接</el-link>
+      <el-link type="info">信息链接</el-link>
+    </div>
+    <div class="mt-space-xs">
+      <el-link disabled>默认链接</el-link>
+      <el-link type="primary" disabled>主要链接</el-link>
+      <el-link type="success" disabled>成功链接</el-link>
+      <el-link type="warning" disabled>警告链接</el-link>
+      <el-link type="danger" disabled>危险链接</el-link>
+      <el-link type="info" disabled>信息链接</el-link>
+    </div>
+    <h1 class="mt-space-xl">单选框</h1>
+    <div class="mt-space-xs">
+      <el-radio v-model="radio" label="1">备选项</el-radio>
+      <el-radio v-model="radio" label="2">备选项</el-radio>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio disabled v-model="radio" label="1">备选项</el-radio>
+      <el-radio disabled v-model="radio" label="2">备选项</el-radio>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio-group v-model="radio1">
+        <el-radio-button label="上海"></el-radio-button>
+        <el-radio-button label="北京"></el-radio-button>
+        <el-radio-button label="广州"></el-radio-button>
+        <el-radio-button label="深圳"></el-radio-button>
+      </el-radio-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio-group v-model="radio2" size="medium">
+        <el-radio-button label="上海"></el-radio-button>
+        <el-radio-button label="北京"></el-radio-button>
+        <el-radio-button label="广州"></el-radio-button>
+        <el-radio-button label="深圳"></el-radio-button>
+      </el-radio-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio-group v-model="radio3" size="small">
+        <el-radio-button label="上海"></el-radio-button>
+        <el-radio-button label="北京" disabled></el-radio-button>
+        <el-radio-button label="广州"></el-radio-button>
+        <el-radio-button label="深圳"></el-radio-button>
+      </el-radio-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio-group v-model="radio4" disabled size="mini">
+        <el-radio-button label="上海"></el-radio-button>
+        <el-radio-button label="北京"></el-radio-button>
+        <el-radio-button label="广州"></el-radio-button>
+        <el-radio-button label="深圳"></el-radio-button>
+      </el-radio-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio-group v-model="radio1">
+        <el-radio-button label="上海"></el-radio-button>
+        <el-radio-button label="北京"></el-radio-button>
+        <el-radio-button label="广州"></el-radio-button>
+        <el-radio-button label="深圳"></el-radio-button>
+      </el-radio-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio v-model="radio1" label="1" border>备选项1</el-radio>
+      <el-radio v-model="radio1" label="2" border>备选项2</el-radio>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio v-model="radio2" label="1" border size="medium">备选项1</el-radio>
+      <el-radio v-model="radio2" label="2" border size="medium">备选项2</el-radio>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio-group v-model="radio3" size="small">
+        <el-radio label="1" border>备选项1</el-radio>
+        <el-radio label="2" border disabled>备选项2</el-radio>
+      </el-radio-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-radio-group v-model="radio4" size="mini" disabled>
+        <el-radio label="1" border>备选项1</el-radio>
+        <el-radio label="2" border>备选项2</el-radio>
+      </el-radio-group>
+    </div>
+    <h1 class="mt-space-xl">复选框</h1>
+    <div class="mt-space-xs">
+      <el-checkbox v-model="checked">备选项</el-checkbox>
+      <el-checkbox v-model="checked1" disabled>备选项1</el-checkbox>
+      <el-checkbox v-model="checked2" disabled>备选项</el-checkbox>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox-group v-model="checkList">
+        <el-checkbox label="复选框 A"></el-checkbox>
+        <el-checkbox label="复选框 B"></el-checkbox>
+        <el-checkbox label="复选框 C"></el-checkbox>
+        <el-checkbox label="禁用" disabled></el-checkbox>
+        <el-checkbox label="选中且禁用" disabled></el-checkbox>
+      </el-checkbox-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox
+        :indeterminate="isIndeterminate"
+        v-model="checkAll"
+        @change="handleCheckAllChange">
+        全选
+      </el-checkbox>
+      <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
+        <el-checkbox v-for="city in cities" :label="city" :key="city">{{ city }}</el-checkbox>
+      </el-checkbox-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox-group v-model="checkboxGroup1">
+        <el-checkbox-button v-for="city in cities" :label="city" :key="city">
+          {{ city }}
+        </el-checkbox-button>
+      </el-checkbox-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox-group v-model="checkboxGroup2" size="medium">
+        <el-checkbox-button v-for="city in cities" :label="city" :key="city">
+          {{ city }}
+        </el-checkbox-button>
+      </el-checkbox-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox-group v-model="checkboxGroup3" size="small">
+        <el-checkbox-button
+          v-for="city in cities"
+          :label="city"
+          :disabled="city === '北京'"
+          :key="city">
+          {{ city }}
+        </el-checkbox-button>
+      </el-checkbox-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
+        <el-checkbox-button v-for="city in cities" :label="city" :key="city">
+          {{ city }}
+        </el-checkbox-button>
+      </el-checkbox-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox v-model="checked_1" label="备选项1" border></el-checkbox>
+      <el-checkbox v-model="checked_2" label="备选项2" border></el-checkbox>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox v-model="checked_3" label="备选项1" border size="medium"></el-checkbox>
+      <el-checkbox v-model="checked_4" label="备选项2" border size="medium"></el-checkbox>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox-group v-model="checkboxGroup_1" size="small">
+        <el-checkbox label="备选项1" border></el-checkbox>
+        <el-checkbox label="备选项2" border disabled></el-checkbox>
+      </el-checkbox-group>
+    </div>
+    <div class="mt-space-xs">
+      <el-checkbox-group v-model="checkboxGroup_2" size="mini" disabled>
+        <el-checkbox label="备选项1" border></el-checkbox>
+        <el-checkbox label="备选项2" border></el-checkbox>
+      </el-checkbox-group>
+    </div>
   </div>
 </template>
+
+<script lang="ts">
+  const cityOptions = ['上海', '北京', '广州', '深圳'];
+  export default {
+    data() {
+      return {
+        radio: '1',
+        radio1: '上海',
+        radio2: '上海',
+        radio3: '上海',
+        radio4: '上海',
+        checked: true,
+        checked1: true,
+        checked2: false,
+        checkList: ['选中且禁用', '复选框 A'],
+        checkAll: false,
+        checkedCities: ['上海', '北京'],
+        cities: cityOptions,
+        isIndeterminate: true,
+        checkboxGroup1: ['上海'],
+        checkboxGroup2: ['上海'],
+        checkboxGroup3: ['上海'],
+        checkboxGroup4: ['上海'],
+        checked_1: true,
+        checked_2: false,
+        checked_3: false,
+        checked_4: true,
+        checkboxGroup_1: [],
+        checkboxGroup_2: ['备选项2'],
+      };
+    },
+    methods: {
+      handleCheckAllChange(val: string[]) {
+        this.checkedCities = val ? cityOptions : [];
+        this.isIndeterminate = false;
+      },
+      handleCheckedCitiesChange(value: string[]) {
+        const checkedCount = value.length;
+        this.checkAll = checkedCount === this.cities.length;
+        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+      },
+    },
+  };
+</script>
