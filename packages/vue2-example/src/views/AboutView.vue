@@ -6,6 +6,7 @@
     <ElRadioExample />
     <ElCheckboxExample />
     <ElInputExample />
+    <ElInputNumberExample />
   </div>
 </template>
 
@@ -16,6 +17,7 @@
   import ElLinkExample from './components/ElLinkExample.vue';
   import ElRadioExample from './components/ElRadioExample.vue';
   import ElCheckboxExample from './components/ElCheckboxExample.vue';
+  import ElInputNumberExample from './components/ElInputNumberExample.vue';
 
   export default {
     components: {
@@ -25,6 +27,7 @@
       ElLinkExample,
       ElRadioExample,
       ElCheckboxExample,
+      ElInputNumberExample,
     },
   };
 </script>

@@ -781,22 +781,6 @@
 .el-input{
   font-size: var(--el-font-size-base);
 }
-/* .el-input::-webkit-scrollbar-thumb{
-  width:6px;
-  background:#b4bccc;
-  border-radius:5px
-}
-.el-input::-webkit-scrollbar-corner{
-  background:#fff
-}
-.el-input::-webkit-scrollbar-track{
-  background:#fff
-}
-.el-input::-webkit-scrollbar-track-piece{
-  width:6px;
-  background:#fff
-} */
-
 .el-input .el-input__clear{
   font-size: var(--el-font-size-base);
   color:var(--el-text-color-placeholder);
@@ -914,6 +898,97 @@
   border-top-right-radius:0;
   border-bottom-right-radius:0
 }
+
+/* Input Number 计数器
+ -------------------------------------------------------------------------------------------------- */
+.el-input-number {
+  width: 180px;
+  line-height: calc(var(--el-component-size-large) - 2px);
+}
+.el-input-number__decrease,
+.el-input-number__increase {
+  font-size: var(--el-font-size-base);
+  color: var(--el-text-color-regular);
+  background: var(--el-fill-color-light);
+}
+.el-input-number__increase{
+  border-left:1px solid var(--el-border-color);
+  border-radius:0 var(--el-border-radius-base) var(--el-border-radius-base) 0;
+}
+.el-input-number__decrease{
+  border-right:1px solid var(--el-border-color);
+  border-radius:var(--el-border-radius-base) 0 0 var(--el-border-radius-base);
+}
+.el-input-number__decrease:hover,
+.el-input-number__increase:hover{
+  color:var(--el-color-primary)
+}
+
+.el-input-number--medium{
+  width: 180px;
+  line-height: calc(var(--el-component-size) - 2px)
+}
+.el-input-number--medium .el-input-number__decrease,
+.el-input-number--medium .el-input-number__increase{
+  font-size: var(--el-font-size-base);
+}
+
+.el-input-number--small{
+  line-height: calc(var(--el-component-size-small) - 2px);
+}
+.el-input-number--small .el-input-number__decrease,
+.el-input-number--small .el-input-number__increase {
+  font-size: var(--el-font-size-small);
+}
+
+.el-input-number--mini{
+  line-height: calc(var(--el-component-size-mini) - 2px);
+}
+.el-input-number--mini .el-input-number__decrease,
+.el-input-number--mini .el-input-number__increase{
+  font-size: var(--el-font-size-extra-small);
+}
+
+.el-input-number.is-controls-right .el-input-number__decrease,
+.el-input-number.is-controls-right .el-input-number__increase {
+  line-height: calc(0.5 * (var(--el-component-size-large) - 2px));
+}
+.el-input-number.is-controls-right .el-input-number__increase {
+  border-bottom:1px solid var(--el-border-color);
+  border-radius:0 var(--el-border-radius-base) 0 0;
+}
+.el-input-number.is-controls-right .el-input-number__decrease {
+  border-left:1px solid var(--el-border-color);
+  border-radius:0 0 var(--el-border-radius-base);
+}
+.el-input-number.is-controls-right[class*="medium"] [class*="decrease"],
+.el-input-number.is-controls-right[class*="medium"] [class*="increase"] {
+  line-height: calc(0.5 * (var(--el-component-size) - 2px));
+}
+.el-input-number.is-controls-right[class*="small"] [class*="decrease"],
+.el-input-number.is-controls-right[class*="small"] [class*="increase"] {
+  line-height: calc(0.5 * (var(--el-component-size-small) - 2px));
+}
+.el-input-number.is-controls-right[class*="mini"] [class*="decrease"],
+.el-input-number.is-controls-right[class*="mini"] [class*="increase"]{
+  height: calc(0.5 * (var(--el-component-size-mini) - 2px));
+  line-height: calc(0.5 * (var(--el-component-size-mini) - 2px));
+}
+
+.el-input-number__decrease.is-disabled,
+.el-input-number__increase.is-disabled {
+  color: var(--el-text-color-disabled);
+}
+.el-input-number.is-disabled .el-input-number__decrease,
+.el-input-number.is-disabled .el-input-number__increase{
+  color:var(--el-border-color-light);
+  border-color:var(--el-border-color-light)
+}
+.el-input-number.is-disabled .el-input-number__decrease:hover,
+.el-input-number.is-disabled .el-input-number__increase:hover{
+  color:var(--el-border-color-light);
+}
+
 .el-input.is-active .el-input__inner {
   border-color:var(--el-color-primary);
 }
@@ -930,4 +1005,9 @@
 }
 .el-input.is-exceed .el-input__suffix .el-input__count{
   color:var(--el-color-danger)
+}
+
+.el-input-number__decrease:hover:not(.is-disabled)~.el-input .el-input__inner:not(.is-disabled),
+.el-input-number__increase:hover:not(.is-disabled)~.el-input .el-input__inner:not(.is-disabled) {
+  border-color:var(--el-color-primary)
 }
