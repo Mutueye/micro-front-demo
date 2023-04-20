@@ -546,10 +546,10 @@
   border:1px solid var(--el-border-color);
   border-radius: var(--el-border-radius-base);
 }
-.el-checkbox.is-bordered.is-checked{
+.el-checkbox.is-bordered.is-checked {
   border-color: var(--el-color-primary)
 }
-.el-checkbox.is-bordered.is-disabled{
+.el-checkbox.is-bordered.is-disabled {
   border-color: var(--el-border-color-light)
 }
 .el-checkbox__input.is-checked+.el-checkbox__label{
@@ -970,9 +970,14 @@
   line-height: calc(0.5 * (var(--el-component-size-small) - 2px));
 }
 .el-input-number.is-controls-right[class*="mini"] [class*="decrease"],
-.el-input-number.is-controls-right[class*="mini"] [class*="increase"]{
-  height: calc(0.5 * (var(--el-component-size-mini) - 2px));
+.el-input-number.is-controls-right[class*="mini"] [class*="increase"] {
   line-height: calc(0.5 * (var(--el-component-size-mini) - 2px));
+}
+.el-input-number.is-controls-right[class*="mini"] [class*="decrease"] {
+  height: calc(0.5 * (var(--el-component-size-mini) - 2px));
+}
+.el-input-number.is-controls-right[class*="mini"] [class*="increase"] {
+  height: calc(0.5 * var(--el-component-size-mini));
 }
 
 .el-input-number__decrease.is-disabled,
