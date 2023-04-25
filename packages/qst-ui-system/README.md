@@ -22,6 +22,7 @@ QST前端UI基础库：
 设计端：
   1. 设计师使用[主题编辑器](https://mutueye.github.io/vite-vue3-scaffold/#/themeeditor)配置并导出json格式的主题列表
   2. 在UI设计的过程中遵循配置好的主题进行设计
+
 前端：
   1. 在项目入口(main.js/main.ts)调用`initQstTheme()`初始化主题样式，引入设计端定制好的主题(不传则使用默认主题列表)
     ```js
