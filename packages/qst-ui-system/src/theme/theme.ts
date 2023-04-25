@@ -82,6 +82,8 @@ export const mixModeBaseColors = {
   },
 };
 
+export type UILib = 'element-ui' | 'element-plus' | 'ant-design-vue' | 'ant-design' | 'vant';
+
 /** 主题选项 */
 export interface ThemeOption {
   /** 主题css变量命名空间 默认--el */
@@ -92,15 +94,15 @@ export interface ThemeOption {
   onStylesSet?: () => void;
   /** 是否包含css重置样式(reset/normalize) 默认是 */
   cssReset?: boolean;
-  /** 是否包含覆盖element-plus样式 默认是 */
-  overrideElementPlus?: boolean;
+  /** 需要适配的组件库(进行样式覆盖/主题定制)  */
+  uiLibs?: UILib | UILib[];
 }
 
 const defaultThemeOption: ThemeOption = {
   namespace: '--el',
   themeList: defaultThemeList,
   cssReset: true,
-  overrideElementPlus: true,
+  uiLibs: 'element-plus',
 };
 
 export const currentThemeList: UITheme[] = [];
@@ -156,14 +158,19 @@ export const injectThemeStyle = (option: ThemeOption) => {
 
 /** 生成初始化样式&组件库(比如element-plus）的全局覆盖样式 */
 const generateResetStyles = (option: ThemeOption) => {
-  const { namespace, overrideElementPlus, cssReset } = option;
+  const { namespace, cssReset, uiLibs } = option;
+
+  const uiLibsList = typeof uiLibs === 'string' ? [uiLibs] : uiLibs;
 
   let styleStr = `${
     cssReset ? normalizeStyles : ''
   } body { font-size: var(${namespace}-font-size-base); background-color: var(${namespace}-bg-color-page); }`;
-  if (overrideElementPlus) {
+  if (uiLibsList.includes('element-plus')) {
     styleStr += (overrideElementPlusStyles as string).replace('--el-', `${namespace}-`);
+  } else {
+    // TODO 更多UI组件库的定制样式
   }
+
   styleStr += 'html { --el-color-white: #ffffff; --el-color-black: #000000; }';
   return styleStr;
 };
