@@ -4,7 +4,7 @@
     <el-dropdown>
       <div class="flex flex-row items-center">
         <img :src="avatar" class="rounded-full w-40px h-40px" />
-        <div class="color-text-primary text-size-16px ml-space-xs">{{ userInfo.name }}</div>
+        <div class="color-text-primary text-size-16px ml-spacing-xs">{{ userInfo.name }}</div>
       </div>
 
       <template #dropdown>

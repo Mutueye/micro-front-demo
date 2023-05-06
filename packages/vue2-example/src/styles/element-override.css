@@ -6,7 +6,7 @@
  -------------------------------------------------------------------------------------------------- */
 .el-button {
   --el-button-size: var(--el-component-size-large);
-  --el-button-padding-x: var(--el-space);
+  --el-button-padding-x: var(--el-spacing);
   --el-button-font-weight: var(--el-font-weight-primary);
   --el-button-border-color: var(--el-border-color);
   --el-button-bg-color: var(--el-fill-color-blank);
@@ -82,15 +82,15 @@
 
 .el-button--medium {
   --el-button-size: var(--el-component-size);
-  --el-button-padding-x: var(--el-space-md);
+  --el-button-padding-x: var(--el-spacing-md);
 }
 .el-button--small {
   --el-button-size: var(--el-component-size-small);
-  --el-button-padding-x: var(--el-space-sm);
+  --el-button-padding-x: var(--el-spacing-sm);
 }
 .el-button--mini {
   --el-button-size: var(--el-component-size-mini);
-  --el-button-padding-x: var(--el-space-xs);
+  --el-button-padding-x: var(--el-spacing-xs);
 }
 
 .el-button--primary {
@@ -324,11 +324,11 @@
 /* Radio 单选框
  -------------------------------------------------------------------------------------------------- */
 .el-radio {
-  margin-right: var(--el-space-xl);
+  margin-right: var(--el-spacing-xl);
   color: var(--el-text-color-regular);
 }
 .el-radio__label {
-  padding-left: var(--el-space-xxs);
+  padding-left: var(--el-spacing-xxs);
   font-size: var(--el-font-size-base);
 }
 .el-radio__inner {
@@ -351,7 +351,7 @@
 }
 .el-radio.is-bordered {
   height: var(--el-component-size-large);
-  padding: calc(0.5 * (var(--el-component-size-large) - var(--el-font-size-base)) - 1px) var(--el-space-sm) calc(0.5 * (var(--el-component-size-large) - var(--el-font-size-base)) - 1px) var(--el-space-xs);
+  padding: calc(0.5 * (var(--el-component-size-large) - var(--el-font-size-base)) - 1px) var(--el-spacing-sm) calc(0.5 * (var(--el-component-size-large) - var(--el-font-size-base)) - 1px) var(--el-spacing-xs);
   border:1px solid var(--el-border-color);
   border-radius: var(--el-border-radius-base);
 }
@@ -362,11 +362,11 @@
   border-color: var(--el-border-color-light);
 }
 .el-radio.is-bordered+.el-radio.is-bordered {
-  margin-left: var(--el-space-xs);
+  margin-left: var(--el-spacing-xs);
 }
 .el-radio--medium.is-bordered {
   height: var(--el-component-size);
-  padding: calc(0.5 * (var(--el-component-size) - var(--el-font-size-base)) - 1px) var(--el-space-sm) calc(0.5 * (var(--el-component-size) - var(--el-font-size-base)) - 1px) var(--el-space-xs);
+  padding: calc(0.5 * (var(--el-component-size) - var(--el-font-size-base)) - 1px) var(--el-spacing-sm) calc(0.5 * (var(--el-component-size) - var(--el-font-size-base)) - 1px) var(--el-spacing-xs);
   border-radius: var(--el-border-radius-base);
 }
 .el-radio--medium.is-bordered .el-radio__inner {
@@ -375,7 +375,7 @@
 }
 .el-radio--small.is-bordered {
   height: var(--el-component-size-small);
-  padding: calc(0.5 * (var(--el-component-size-small) - var(--el-font-size-base)) - 1px) var(--el-space-sm) calc(0.5 * (var(--el-component-size-small) - var(--el-font-size-base)) - 1px) var(--el-space-xs);
+  padding: calc(0.5 * (var(--el-component-size-small) - var(--el-font-size-base)) - 1px) var(--el-spacing-sm) calc(0.5 * (var(--el-component-size-small) - var(--el-font-size-base)) - 1px) var(--el-spacing-xs);
   border-radius: var(--el-border-radius-base);
 }
 .el-radio--small.is-bordered .el-radio__label {
@@ -387,7 +387,7 @@
 }
 .el-radio--mini.is-bordered {
   height: var(--el-component-size-mini);
-  padding: calc(0.5 * (var(--el-component-size-mini) - var(--el-font-size-base)) - 1px) var(--el-space-sm) calc(0.5 * (var(--el-component-size-mini) - var(--el-font-size-base)) - 1px) var(--el-space-xs);
+  padding: calc(0.5 * (var(--el-component-size-mini) - var(--el-font-size-base)) - 1px) var(--el-spacing-sm) calc(0.5 * (var(--el-component-size-mini) - var(--el-font-size-base)) - 1px) var(--el-spacing-xs);
   border-radius: var(--el-border-radius-base);
 }
 .el-radio--mini.is-bordered .el-radio__label {
@@ -432,7 +432,7 @@
   align-items: center;
   justify-content: center;
   height: var(--el-component-size-large);
-  padding: 0 var(--el-space);
+  padding: 0 var(--el-spacing);
   font-size: var(--el-font-size-base);
   color: var(--el-text-color-regular);
   background: var(--el-bg-color);
@@ -443,18 +443,18 @@
   color: var(--el-color-primary);
 }
 .el-radio-button__inner [class*="el-icon-"] + span {
-  margin-left: var(--el-space-xxxs);
+  margin-left: var(--el-spacing-xxxs);
 }
 .el-radio-button--medium .el-radio-button__inner {
-  padding: 0 var(--el-space-md);
+  padding: 0 var(--el-spacing-md);
   font-size: var(--el-font-size-base);
 }
 .el-radio-button--small .el-radio-button__inner {
-  padding: 0 var(--el-space-sm);
+  padding: 0 var(--el-spacing-sm);
   font-size: var(--el-font-size-extra-small);
 }
 .el-radio-button--mini .el-radio-button__inner {
-  padding: 0 var(--el-space-sm);
+  padding: 0 var(--el-spacing-sm);
   font-size: var(--el-font-size-extra-small);
 }
 .el-radio-button__orig-radio:checked + .el-radio-button__inner {
@@ -482,13 +482,13 @@
   background-color: var(--el-fill-color);
 }
 .el-radio-button--medium .el-radio-button__inner.is-round {
-  padding: 0 var(--el-space-md)
+  padding: 0 var(--el-spacing-md)
 }
 .el-radio-button--small .el-radio-button__inner.is-round {
-  padding: 0 var(--el-space-sm);
+  padding: 0 var(--el-spacing-sm);
 }
 .el-radio-button--mini .el-radio-button__inner.is-round{
-  padding: 0 var(--el-space-sm);
+  padding: 0 var(--el-spacing-sm);
 }
 .el-radio-button:focus:not(.is-focus, :active, .is-disabled) {
   box-shadow:0 0 2px 2px var(--el-color-primary)
@@ -502,7 +502,7 @@
   color: var(--el-text-color-regular);
 }
 .el-checkbox{
-  margin-right: var(--el-space-xl);
+  margin-right: var(--el-spacing-xl);
 }
 .el-checkbox__inner {
   width: var(--el-font-size-base);
@@ -542,7 +542,7 @@
   align-items: center;
   justify-content: center;
   height: var(--el-component-size-large);
-  padding: 0 var(--el-space-sm) 0 var(--el-space-xs);
+  padding: 0 var(--el-spacing-sm) 0 var(--el-spacing-xs);
   border:1px solid var(--el-border-color);
   border-radius: var(--el-border-radius-base);
 }
@@ -574,7 +574,7 @@
   display:none
 }
 .el-checkbox.is-bordered+.el-checkbox.is-bordered{
-  margin-left: var(--el-space-xs);
+  margin-left: var(--el-spacing-xs);
 }
 .el-checkbox__input.is-disabled .el-checkbox__inner {
   background-color: var(--el-bg-color-secondary);
@@ -597,7 +597,7 @@
 }
 .el-checkbox.is-bordered.el-checkbox--medium {
   height: var(--el-component-size);
-  padding: 0 var(--el-space-sm) 0 var(--el-space-xs);
+  padding: 0 var(--el-spacing-sm) 0 var(--el-spacing-xs);
   border-radius: var(--el-border-radius-base);
 }
 .el-checkbox.is-bordered.el-checkbox--medium .el-checkbox__input {
@@ -610,7 +610,7 @@
 }
 .el-checkbox.is-bordered.el-checkbox--small{
   height: var(--el-component-size-small);
-  padding: 0 var(--el-space-sm) 0 var(--el-space-xs);
+  padding: 0 var(--el-spacing-sm) 0 var(--el-spacing-xs);
   border-radius: var(--el-border-radius-base);
 }
 .el-checkbox.is-bordered.el-checkbox--small .el-checkbox__input {
@@ -632,7 +632,7 @@
 
 .el-checkbox.is-bordered.el-checkbox--mini{
   height: var(--el-component-size-mini);
-  padding: 0 var(--el-space-sm) 0 var(--el-space-xs);
+  padding: 0 var(--el-spacing-sm) 0 var(--el-spacing-xs);
   border-radius: var(--el-border-radius-base);
 }
 .el-checkbox.is-bordered.el-checkbox--mini .el-checkbox__input {
@@ -675,7 +675,7 @@
   align-items: center;
   justify-content: center;
   height: var(--el-component-size-large);
-  padding: 0 var(--el-space-md);
+  padding: 0 var(--el-spacing-md);
   background: var(--el-bg-color);
   border: 1px solid var(--el-border-color);
   border-left: 0;
@@ -688,17 +688,17 @@
 }
 .el-checkbox-button--medium .el-checkbox-button__inner {
   height: var(--el-component-size);
-  padding: 0 var(--el-space-md);
+  padding: 0 var(--el-spacing-md);
   font-size:var(--el-font-size-base);
 }
 .el-checkbox-button--small .el-checkbox-button__inner{
   height: var(--el-component-size-small);
-  padding: 0 var(--el-space-sm);
+  padding: 0 var(--el-spacing-sm);
   font-size: var(--el-font-size-extra-small);
 }
 .el-checkbox-button--mini .el-checkbox-button__inner{
   height: var(--el-component-size-mini);
-  padding: 0 var(--el-space-sm);
+  padding: 0 var(--el-spacing-sm);
   font-size: var(--el-font-size-extra-small);
 }
 .el-checkbox-button:first-child .el-checkbox-button__inner{
@@ -743,7 +743,7 @@
   font-size: var(--el-font-size-base);
 }
 .el-textarea__inner {
-  padding: var(--el-space-xxxs) var(--el-space-sm);
+  padding: var(--el-spacing-xxxs) var(--el-spacing-sm);
   color: var(--el-text-color-regular);
   background-color: var(--el-bg-color);
   border: 1px solid var(--el-border-color-light);
@@ -796,12 +796,12 @@
   color:var(--el-color-danger)
 }
 .el-input .el-input__count .el-input__count-inner{
-  padding:0 var(--el-space-xxxs);
+  padding:0 var(--el-spacing-xxxs);
   background: var(--el-bg-color);
 }
 .el-input__inner{
   height: var(--el-component-size-large);
-  padding:0 var(--el-space-sm);
+  padding:0 var(--el-spacing-sm);
   line-height: var(--el-component-size-large);
   color: var(--el-text-color-regular);
   background-color: var(--el-bg-color);
@@ -821,10 +821,10 @@
   border-color:var(--el-color-primary);
 }
 .el-input__suffix{
-  right: var(--el-space-xxxs);
+  right: var(--el-spacing-xxxs);
 }
 .el-input__prefix{
-  left: var(--el-space-xxxs);
+  left: var(--el-spacing-xxxs);
 }
 .el-input__icon {
   width: 25px;
@@ -845,7 +845,7 @@
 }
 .el-input--small .el-input__inner {
   height: var(--el-component-size-small);
-  padding: 0 var(--el-space-xs);
+  padding: 0 var(--el-spacing-xs);
   line-height: var(--el-component-size-small);
 }
 .el-input--small .el-input__icon{
@@ -856,7 +856,7 @@
 }
 .el-input--mini .el-input__inner{
   height: var(--el-component-size-mini);
-  padding: 0 var(--el-space-xxs);
+  padding: 0 var(--el-spacing-xxs);
   line-height: var(--el-component-size-mini);
 }
 .el-input--mini .el-input__icon{
@@ -864,15 +864,15 @@
 }
 
 .el-input--suffix .el-input__inner{
-  padding-right: var(--el-space-xl);
+  padding-right: var(--el-spacing-xl);
 }
 .el-input--prefix .el-input__inner{
-  padding-left: var(--el-space-xl);
+  padding-left: var(--el-spacing-xl);
 }
 
 .el-input-group__append,.el-input-group__prepend{
   width: 1px;
-  padding: 0 var(--el-space-md);
+  padding: 0 var(--el-spacing-md);
   color: var(--el-text-color-secondary);
   background-color:var(--el-fill-color-light);
   border: 1px solid var(--el-border-color);

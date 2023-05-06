@@ -1,4 +1,4 @@
-import { generateUnocssTheme } from 'qst-ui-system';
+import { generateUnocssTheme } from '@itshixun/qst-ui-system';
 
 export const theme = generateUnocssTheme();
 

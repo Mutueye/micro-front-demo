@@ -16,10 +16,10 @@
     "lint:style:check": "stylelint ./src/**/*.{vue,css,scss}"
   },
   "dependencies": {
+    "@itshixun/qst-ui-system": "^0.0.6",
     "@vueuse/core": "^9.13.0",
     "element-ui": "^2.15.13",
     "pinia": "^2.0.34",
-    "qst-ui-system": "workspace:^",
     "vue": "^2.7.14",
     "vue-router": "^3.6.5"
   },

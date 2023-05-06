@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import ElementPlus from 'element-plus';
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
-import { initQstTheme } from 'qst-ui-system';
+import { initQstTheme } from '@itshixun/qst-ui-system';
 
 import App from '@/App.vue';
 import { router } from '@/router/index';

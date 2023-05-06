@@ -19,10 +19,6 @@
     {
       "name": "packages/vue2demo",
       "path": "../packages/vue2demo"
-    },
-    {
-      "name": "packages/qst-ui-system",
-      "path": "../packages/qst-ui-system"
     }
   ],
   "settings": {

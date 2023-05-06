@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { createPinia, PiniaVuePlugin } from 'pinia';
 import ElementUI from 'element-ui';
-import { initQstTheme } from 'qst-ui-system';
+import { initQstTheme } from '@itshixun/qst-ui-system';
 
 import App from './App.vue';
 import router from './router';

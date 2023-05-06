@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { onMounted } from 'vue';
-  import { setThemeClassByIndex } from 'qst-ui-system';
+  import { setThemeClassByIndex } from '@itshixun/qst-ui-system';
   import { useToggleDayNight } from '@/composables/useToggleDayNight';
   import AboutView from './views/AboutView.vue';
 
@@ -21,7 +21,7 @@
 </script>
 
 <template>
-  <div class="w-1200px py-space mx-auto">
+  <div class="w-1200px py-spacing mx-auto">
     <AboutView />
   </div>
 </template>

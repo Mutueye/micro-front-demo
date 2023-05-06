@@ -1,31 +1,31 @@
 <template>
-  <div class="mt-space-xxxl">
+  <div class="mt-spacing-xxxl">
     <h1>输入框</h1>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input v-model="input" placeholder="请输入内容"></el-input>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input placeholder="请输入内容" v-model="input" :disabled="true"></el-input>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input placeholder="请输入内容" v-model="input" clearable></el-input>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <div class="flex flex-row items-center">
         <span class="whitespace-nowrap">属性方式：</span>
         <el-input
           placeholder="请选择日期"
           suffix-icon="el-icon-date"
           v-model="input1"
-          class="mr-space-xs"></el-input>
+          class="mr-spacing-xs"></el-input>
         <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input2"></el-input>
       </div>
-      <div class="flex flex-row items-center mt-space-xs">
+      <div class="flex flex-row items-center mt-spacing-xs">
         <span class="whitespace-nowrap">slot 方式：</span>
-        <el-input placeholder="请选择日期" v-model="input3" class="mr-space-xs">
+        <el-input placeholder="请选择日期" v-model="input3" class="mr-spacing-xs">
           <i slot="suffix" class="el-input__icon el-icon-date"></i>
         </el-input>
         <el-input placeholder="请输入内容" v-model="input4">
@@ -33,20 +33,20 @@
         </el-input>
       </div>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input type="textarea" :rows="2" placeholder="请输入内容" v-model="textarea"></el-input>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input placeholder="请输入内容" v-model="input1">
         <template slot="prepend">Http://</template>
       </el-input>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input placeholder="请输入内容" v-model="input2">
         <template slot="append">.com</template>
       </el-input>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
         <el-select v-model="select" slot="prepend" placeholder="请选择" class="w-130px">
           <el-option label="餐厅名" value="1"></el-option>
@@ -56,31 +56,31 @@
         <el-button type="primary" slot="append" icon="el-icon-search"></el-button>
       </el-input>
     </div>
-    <div class="mt-space-xs flex flex-row items-center">
+    <div class="mt-spacing-xs flex flex-row items-center">
       <el-input
         placeholder="请输入内容"
         suffix-icon="el-icon-date"
         v-model="input1"
-        class="mr-space-xs"></el-input>
+        class="mr-spacing-xs"></el-input>
       <el-input
         size="medium"
         placeholder="请输入内容"
         suffix-icon="el-icon-date"
         v-model="input2"
-        class="mr-space-xs"></el-input>
+        class="mr-spacing-xs"></el-input>
       <el-input
         size="small"
         placeholder="请输入内容"
         suffix-icon="el-icon-date"
         v-model="input3"
-        class="mr-space-xs"></el-input>
+        class="mr-spacing-xs"></el-input>
       <el-input
         size="mini"
         placeholder="请输入内容"
         suffix-icon="el-icon-date"
         v-model="input4"></el-input>
     </div>
-    <div class="mt-space-xs">
+    <div class="mt-spacing-xs">
       <el-input
         type="text"
         placeholder="请输入内容"

@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-300px bg-bg-secondary flex flex-col items-center justify-center">
     <div class="text-size-18px font-bold color-primary">子应用：athena-home-banner</div>
-    <div class="text-size-16px font-bold mt-space color-text-primary">
+    <div class="text-size-16px font-bold mt-spacing color-text-primary">
       登录状态：{{ token ? `已登录，token: ${token}` : '未登录' }}
     </div>
     <i inline-block align-middle text-size-large class="i-mdi-check-circle-outline" />
@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
   import { onMounted } from 'vue';
-  import { setThemeClassByIndex } from 'qst-ui-system';
+  import { setThemeClassByIndex } from '@itshixun/qst-ui-system';
   import { useToggleDayNight } from '@/composables/useToggleDayNight';
   import { useAuthStore } from './store/auth';
   import { storeToRefs } from 'pinia';
