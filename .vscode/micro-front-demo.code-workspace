@@ -13,8 +13,12 @@
       "path": "../packages/athena-home-banner"
     },
     {
-      "name": "packages/qst-ui-system",
-      "path": "../packages/qst-ui-system"
+      "name": "packages/vue2-example",
+      "path": "../packages/vue2-example"
+    },
+    {
+      "name": "packages/vue2demo",
+      "path": "../packages/vue2demo"
     }
   ],
   "settings": {
@@ -30,7 +34,11 @@
       "source.fixAll.stylelint": true
     },
     "diffEditor.wordWrap": "off",
-    "unocss.root": ["packages/athena-main", "packages/athena-home-banner"],
+    "unocss.root": [
+      "packages/athena-main",
+      "packages/athena-home-banner",
+      "packages/vue2-example"
+    ],
     "colorize.languages": [
       "json",
       "css",

@@ -3,7 +3,7 @@
     <button
       v-for="(theme, index) in currentThemeList"
       :key="'primary' + theme.name"
-      class="theme-btn mr-space color-white"
+      class="theme-btn mr-spacing color-white"
       :style="{ backgroundColor: theme.config[dayNightMode].color.primary }"
       @click="themeStore.setCurrentThemeIndex(index)">
       <i
@@ -28,7 +28,7 @@
   import { storeToRefs } from 'pinia';
   import { useToggleDayNight } from '@/componsables/useToggleDayNight';
   import { useThemeStore } from '@/store/theme';
-  import { currentThemeList } from 'qst-ui-system';
+  import { currentThemeList } from '@itshixun/qst-ui-system';
 
   const themeStore = useThemeStore();
   const { currentThemeIndex } = storeToRefs(themeStore);

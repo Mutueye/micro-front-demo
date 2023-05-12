@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { DayNightModeEnum } from 'qst-ui-system';
+import { DayNightModeEnum } from '@itshixun/qst-ui-system';
 import { useDark, useToggle } from '@vueuse/core';
 import WujieVue from 'wujie-vue3';
 

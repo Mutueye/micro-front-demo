@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { setThemeClassByIndex } from 'qst-ui-system';
+import { setThemeClassByIndex } from '@itshixun/qst-ui-system';
 import WujieVue from 'wujie-vue3';
 
 interface ThemeState {
