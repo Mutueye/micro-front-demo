@@ -1,0 +1,6 @@
+{
+  "unocss.root": [
+    "packages/athena-main",
+    "packages/athena-home-banner"
+  ]
+}
