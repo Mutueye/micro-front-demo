@@ -1,8 +1,9 @@
 import { Base64 } from 'js-base64';
 import { useAppConfigStore } from '@/store/appConfig';
+import { athena_api } from './pathUtils';
 
 export const redirectUri = encodeURIComponent(
-  `${location.origin}/api/login?redirect_uri=${location.href}`,
+  `${location.origin}${athena_api}/login?redirect_uri=${location.href}`,
 );
 
 export const goLogin = () => {

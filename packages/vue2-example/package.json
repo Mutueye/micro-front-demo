@@ -16,7 +16,7 @@
     "lint:style:check": "stylelint ./src/**/*.{vue,css,scss}"
   },
   "dependencies": {
-    "@itshixun/qst-ui-system": "^0.0.6",
+    "@itshixun/qst-ui-system": "^0.0.9",
     "@vueuse/core": "^9.13.0",
     "element-ui": "^2.15.13",
     "pinia": "^2.0.34",
@@ -49,8 +49,8 @@
     "stylelint-scss": "^4.6.0",
     "terser": "^5.16.9",
     "typescript": "~4.7.4",
-    "unocss": "^0.48.5",
-    "vite": "^4.2.1",
+    "unocss": "^0.51.12",
+    "vite": "^4.3.5",
     "vue-tsc": "^0.38.9"
   },
   "lint-staged": {

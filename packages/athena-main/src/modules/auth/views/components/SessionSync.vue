@@ -7,6 +7,7 @@
   import { useAppConfigStore } from '@/store/appConfig';
   import { useAuthStore } from '../../store/auth';
   import { useAuthProcess } from '@/componsables/useAuthProcess';
+  import { athena_api } from '@/utils/pathUtils';
 
   const { processAuth } = useAuthProcess();
 
@@ -16,7 +17,7 @@
 
   // 因为使用iframe访问用户中心，这里fallback参数中的redirect_uri无效(用户中心判断如果当前是在iframe中，
   // 只给父窗口postMessage，不会做页面跳转)
-  const fallback = `${location.origin}/api/login?redirect_uri=${window.location.origin}`;
+  const fallback = `${location.origin}${athena_api}/login?redirect_uri=${window.location.origin}`;
   // quc 同步登录地址
   const syncUrl = `${
     useAppConfigStore().config.QUC

@@ -1,6 +1,7 @@
 import { generateUnocssTheme } from '@itshixun/qst-ui-system';
+import type { Theme } from 'unocss/preset-mini';
 
-export const theme = generateUnocssTheme();
+export const theme: Theme = generateUnocssTheme();
 
 export const uplusIconCollection = {
   // uplus logo

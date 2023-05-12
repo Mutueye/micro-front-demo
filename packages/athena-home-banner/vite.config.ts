@@ -48,6 +48,7 @@ const baseConfig = defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  envDir: '../../env',
 });
 
 /**
@@ -58,12 +59,16 @@ const baseConfig = defineConfig({
  */
 export default defineConfig(({ mode }) => {
   // 取env环境变量配置，没取到则默认开发环境
-  const viteEnvs = loadEnv(mode, process.cwd() + '/env');
+  const viteEnvs = loadEnv(mode, '../../env');
   for (const k in viteEnvs) {
     process.env[k] = viteEnvs[k];
   }
   // api前缀
-  const proxyApiPrepend = process.env.VITE_API_BASE_PATH ? process.env.VITE_API_BASE_PATH : '/api';
+  const athena_api = process.env.VITE_API_PATH_ATHENA
+    ? process.env.VITE_API_PATH_ATHENA
+    : '/athena_api';
+  const uranus_api = process.env.VITE_API_PATH_URANUS ? process.env.VITE_API_PATH_URANUS : '/api';
+
   // 要代理的地址
   const gateway = process.env.VITE_API_GATEWAY
     ? process.env.VITE_API_GATEWAY
@@ -80,11 +85,15 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
       port: 5210,
       proxy: {
-        [proxyApiPrepend]: {
-          target: `${gateway}/api`,
+        [athena_api]: {
+          target: `${gateway}`,
           ws: true,
           changeOrigin: true,
-          rewrite: (path) => path.replace(proxyApiPrepend, ''),
+        },
+        [uranus_api]: {
+          target: `${gateway}`,
+          ws: true,
+          changeOrigin: true,
         },
       },
     },

@@ -32,7 +32,6 @@ export enum ContentTypeEnum {
 }
 
 export const axiosBaseInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_PATH,
   headers: {
     'Content-Type': ContentTypeEnum.JSON,
   },

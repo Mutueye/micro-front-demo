@@ -2,6 +2,9 @@ export const basePath = import.meta.env.VITE_APP_BASE_PATH
   ? import.meta.env.VITE_APP_BASE_PATH
   : '/';
 
+export const athena_api = import.meta.env.VITE_API_PATH_ATHENA;
+export const uranus_api = import.meta.env.VITE_API_PATH_URANUS;
+
 // 适配单域名部署时 跳转站内url要带上根路径
 export const joinBasePath = (url: string) => {
   if (url.startsWith('//') || url.startsWith('http://') || url.startsWith('https://')) {

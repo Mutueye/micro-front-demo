@@ -1,7 +1,4 @@
 import { defineStore } from 'pinia';
-// import { axiosBaseInstance, ApiRoots, ResultData } from '@/utils/requestUtils';
-// import { goLogout } from '@/utils/authUtils';
-// import { baseLocation } from '@/utils/pathUtils';
 
 export interface UserInfo {
   /** 头像地址 */

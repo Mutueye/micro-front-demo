@@ -1,8 +1,7 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
-import { axiosBaseInstance } from '@/utils/requestUtils';
-const uplusServer = '/uranus';
-const portal = '/api/portal';
+import { axiosBaseInstance, ApiRoots } from '@/utils/requestUtils';
+// import { athena_api, uranus_api } from '@/utils/pathUtils';
 
 // 首页类型： 默认 / 高校专属 / 区域专属
 type HomeType = '' | 'school' | 'area';
@@ -136,12 +135,12 @@ export const useAppConfigStore = defineStore('appConfig', {
 
     /** 获取学院相关配置 */
     async getCollegeConfig(collegeCode: string) {
-      interface Config {
-        [propName: string]: any;
-      }
-      const collegeConfig: Config = {};
+      // interface Config {
+      //   [propName: string]: any;
+      // }
+      // const collegeConfig: Config = {};
       const res = await axiosBaseInstance.get(
-        `${uplusServer}/base/config/college?param=${collegeCode}`,
+        `${ApiRoots.uranus}/base/config/college?param=${collegeCode}`,
       );
       console.log('college res::::', res);
       // getResult(res).forEach((el: Config) => {
@@ -178,7 +177,9 @@ export const useAppConfigStore = defineStore('appConfig', {
     /* 获取区域专属首页配置 */
     async getAreaConfig() {
       try {
-        const res = await axiosBaseInstance.get(`${portal}/website_configs/${this.config.CODE}`);
+        const res = await axiosBaseInstance.get(
+          `${ApiRoots.portal}/website_configs/${this.config.CODE}`,
+        );
 
         if (res?.data?.data) {
           // const areaConfig = getResult(res);

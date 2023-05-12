@@ -6,6 +6,7 @@ import type {
   AxiosInterceptorOptions,
 } from 'axios';
 import { useAuthStore } from '@/modules/auth/store/auth';
+import { athena_api, uranus_api } from '@/utils/pathUtils';
 
 // 约定的常规返回数据结构体
 export interface ResultData<T> {
@@ -100,7 +101,7 @@ setupAxiosRequestInterceptor({
   },
 });
 
-export enum ApiRoots {
-  portal = '/api/portal',
-  uranus = '/uranus',
-}
+export const ApiRoots = {
+  portal: `${athena_api}/portal`,
+  uranus: uranus_api,
+};
