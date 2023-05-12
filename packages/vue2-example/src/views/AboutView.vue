@@ -1,12 +1,17 @@
 <template>
-  <div class="w-full">
-    <ElButtonExample />
-    <IconFontExample />
-    <ElLinkExample />
-    <ElRadioExample />
-    <ElCheckboxExample />
-    <ElInputExample />
-    <ElInputNumberExample />
+  <div class="flex flex-col">
+    <div class="text-size-32px font-semibold text-center mb-spacing-md mt-spacing">
+      element-ui对接qst-ui-system (WIP)
+    </div>
+    <div class="w-full p-spacing bg-bg">
+      <ElButtonExample />
+      <IconFontExample />
+      <ElLinkExample />
+      <ElRadioExample />
+      <ElCheckboxExample />
+      <ElInputExample />
+      <ElInputNumberExample />
+    </div>
   </div>
 </template>
 
