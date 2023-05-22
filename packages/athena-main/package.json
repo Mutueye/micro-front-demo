@@ -24,7 +24,6 @@
     "@vueuse/head": "^1.1.26",
     "axios": "^1.4.0",
     "color2k": "^2.0.2",
-    "common-utils": "workspace:^",
     "element-plus": "^2.3.5",
     "js-base64": "^3.7.5",
     "lodash-es": "^4.17.21",
