@@ -1,0 +1,27 @@
+{
+  "name": "common-utils",
+  "version": "0.0.1",
+  "description": "Oberon Access Control Policy",
+  "main": "dist/index.common.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:lib": "rimraf dist && rollup -c",
+    "watch": "rimraf dist && rollup -cw",
+    "pub": "pnpm build && npm publish"
+  },
+  "keywords": [],
+  "author": "Mutueye",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "rimraf": "^5.0.0",
+    "rollup": "^3.21.5",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
+  }
+}

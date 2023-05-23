@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "prepare": "simple-git-hooks",
-    "build:lib": "lerna run build:lib --parallel",
+    "build:lib": "lerna run build:lib",
     "dev": "pnpm build:lib && lerna run dev --parallel",
     "build": "pnpm build:lib && lerna run build --parallel",
     "lint": "pnpm -r --workspace-concurrency=1 lint",

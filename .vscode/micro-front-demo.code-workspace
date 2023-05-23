@@ -19,6 +19,10 @@
     {
       "name": "packages/vue2demo",
       "path": "../packages/vue2demo"
+    },
+    {
+      "name": "libs/common-utils",
+      "path": "../libs/common-utils"
     }
   ],
   "settings": {
@@ -38,31 +42,6 @@
       "packages/athena-main",
       "packages/athena-home-banner",
       "packages/vue2-example"
-    ],
-    "colorize.languages": [
-      "json",
-      "css",
-      "sass",
-      "scss",
-      "less",
-      "stylus",
-      "xml",
-      "svg",
-      "javascript",
-      "typescript",
-      "vue"
-    ],
-    "colorize.include": [
-      "**/*.json",
-      "**/*.css",
-      "**/*.scss",
-      "**/*.sass",
-      "**/*.less",
-      "**/*.styl",
-      "**/*.js",
-      "**/*.ts",
-      "**/*.vue"
-    ],
-    "volar.inlayHints.eventArgumentInInlineHandlers": false
+    ]
   }
 }
