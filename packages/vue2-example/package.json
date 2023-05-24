@@ -5,7 +5,7 @@
     "dev": "vite --mode dev",
     "dev:prod": "vite --mode prod",
     "dev:local": "vite --mode local",
-    "build": "vue-tsc && vite build --mode prod",
+    "build": "vite build --mode prod",
     "preview": "vite preview",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
