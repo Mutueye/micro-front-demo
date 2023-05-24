@@ -3,7 +3,7 @@ import { defineStore } from 'pinia';
 import { axiosBaseInstance, ApiRoots, ResultData } from '@/utils/requestUtils';
 import { goLogout } from '@/utils/authUtils';
 import { basePath } from '@/utils/pathUtils';
-import { baseLocation } from 'common-utils/dist/pathUtils';
+import { pathUtils } from 'common-utils';
 
 // const { bus } = Wujie;
 
@@ -99,7 +99,7 @@ export const useAuthStore = defineStore('auth', {
         this.identity = '';
         goLogout();
       } else {
-        location.href = baseLocation(basePath);
+        location.href = pathUtils.baseLocation(basePath);
       }
       // bus.$emit('logout');
     },
