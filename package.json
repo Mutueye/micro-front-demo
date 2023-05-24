@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@lerna-lite/cli": "^2.3.0",
-    "@lerna-lite/run": "^2.3.0",
+    "@lerna-lite/cli": "^2.4.0",
+    "@lerna-lite/run": "^2.4.0",
     "lint-staged": "^13.2.2",
     "simple-git-hooks": "^2.8.1"
   },
