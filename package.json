@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "prepare": "simple-git-hooks",
-    "build:lib": "lerna run build:lib",
-    "dev": "pnpm build:lib && lerna run dev --parallel",
-    "build": "pnpm build:lib && lerna run build --parallel",
+    "build:lib": "pnpm -r --if-present build:lib",
+    "dev": "pnpm build:lib && pnpm -r --workspace-concurrency=0 --if-present dev",
+    "build": "pnpm build:lib && pnpm -r --workspace-concurrency=0 --if-present build",
     "lint": "pnpm -r --workspace-concurrency=1 lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,9 +14,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@lerna-lite/cli": "^2.4.0",
-    "@lerna-lite/run": "^2.4.0",
-    "lint-staged": "^13.2.2",
     "simple-git-hooks": "^2.8.1"
   },
   "simple-git-hooks": {

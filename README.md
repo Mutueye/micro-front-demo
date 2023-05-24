@@ -1,6 +1,6 @@
 # micro-front-demo 微前端示例项目
 
-整个项目为一个多包项目(Monorepo)，项目使用 lerna-lite 结合 pnpm 的 workspace 进行多包管理
+整个项目为一个多包项目(Monorepo)，项目使用 pnpm 的 workspace 进行多包管理
 
 - 微前端是一种将大型前端应用程序拆分为小的、松耦合的部分的方法，以便不同的部分可以独立地开发、测试和部署。
 
