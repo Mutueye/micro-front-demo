@@ -3,9 +3,8 @@
     <!-- <WuJie width="100%" height="auto" name="example" url="https://vercel.com/" :sync="true" /> -->
     <WuJie
       width="100%"
-      height="100%"
       name="example"
-      url="https://mutueye.github.io/vite-vue3-scaffold/"
+      url="https://wujicode.cn/xy/app/prod/official/index"
       :sync="true" />
   </SectionWrapper>
 </template>
