@@ -16,21 +16,20 @@ export const useAuthProcess = () => {
           .getUserIdentity()
           .then((res) => {
             if (res === UserIdentity.Business) {
-              if (processFinished) processFinished();
               // TODO 企业用户跳转提示页面
             } else {
-              if (processFinished) processFinished();
               // TODO Uplus信息同步
               // TODO 获取U+的学院配置
             }
           })
           .catch((err) => {
             ElMessage.error(err.message);
-            if (processFinished) processFinished();
           });
       })
       .catch((err: any) => {
         ElMessage.error(err.message);
+      })
+      .finally(() => {
         if (processFinished) processFinished();
       });
   };
